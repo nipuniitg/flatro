@@ -330,7 +330,7 @@ hr {
 .col-md-12{
   position: relative;
   min-height: 1px;
-  padding-left: 100px;
+  padding-left: 15px;
   padding-right: 15px;
 }
 
@@ -660,8 +660,8 @@ hr {
   }
   /* Changed by dileep 2-4-14*/
   .col-md-12 {
-	margin-left: 30%;
-    width: 42.0%;
+	/*margin-left: 30%;*/
+    width: 100.0%;
   }
   .col-md-11 {
     width: 91.66666666666666%;

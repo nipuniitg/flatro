@@ -495,7 +495,7 @@ a.color3:hover {
 	background-color: #eeeeee;
 	color: #444444;
 	margin-left: -140%;
-	padding: 25px 10px;
+	padding: 15px 10px;
 	position: absolute;
 	width: 150%;
 	transition: all 0.3s ease;
@@ -524,8 +524,8 @@ a.color3:hover {
 	height: 40px;
 	outline: none;
 	position: absolute;
-	right: 10px;
-	top: 15px;
+	right: 5px;
+	top: 5px;
 	width: 40px;
 }
 .searchbar .searchbox button:hover {

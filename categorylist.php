@@ -12,7 +12,7 @@
     <meta content="Flatroshop online shopping point" name="description">
     <meta content="logoby.us" name="author">
     <link href="images/ico.html" rel="shortcut icon">
-    <title>Flatro - Online Shop Template</title>
+    <title>Tryncee - Online Shopping </title>
 
     <!-- Reset CSS -->
     <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
@@ -65,6 +65,7 @@
 
 </head>
 
+
 <body>
 <!-- Header -->
 <header>
@@ -76,10 +77,10 @@
 
             <div class="topheadrow">
                 <!-- Logo -->
-                <div class="logo"> <a href="index.html" title="Flatro Template"><!-- <img alt="Flatro - Responsive Metro Inspired Flat ECommerce theme" src="images/logo2.png"> -->
-                    <div class="logoimage"><i class="fa fa-shopping-cart fa-fw"></i></div>
-                    <div class="logotext"><span><strong>FLATRO</strong></span><span>SHOP</span></div>
-                    <span class="slogan">ONLINE STORE</span></a>
+                <div class="logo"> <a href="index.php" title="Tryncee"><!-- <img alt="Flatro - Responsive Metro Inspired Flat ECommerce theme" src="images/logo2.png"> -->
+                   <!-- <div class="logoimage"><i class="fa fa-shopping-cart fa-fw"></i></div> -->
+                    <div class="logotext"><span><strong>TRYNCEE</strong></span><span></span></div>
+                   <span class="slogan"></span></a>
                 </div>
                 <!-- End Logo -->
 
@@ -133,11 +134,11 @@
                     <li>
 
                   &lt;!&ndash;<form action="#">
-            
+
               <input class="searchinput" id="search" placeholder="Search..." type="search">
               <button class="fa fa-search fa-fw" type="submit"></button>
           </form>&ndash;&gt;
-      
+
 			</li>-->
 
                 </ul>
@@ -184,12 +185,12 @@
 <div class="container">
 <div class="row clearfix">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 menu-col">
-<div class="menu-heading"> <span> <i class="fa fa-bars"></i> Categories</span> </div>
+<div class="menu-heading menuHeadingdropdown"> <span> <i class="fa fa-bars"></i> Categories</span> </div>
 <!-- Mega Menu -->
-<div class="menu3dmega vertical" id="menuMega">
+<div class="menu3dmega vertical menuMegasub" id="menuMega">
 <ul>
 <!-- Menu Item Links for Mobiles Only -->
-<li class="visible-xs"> <a href="index.html"> <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-right"></i> </a>
+<li class="visible-xs"> <a href="index.php"> <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-right"></i> </a>
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
@@ -220,12 +221,13 @@
     </div>
 </li>
 <!-- end: Menu Item -->
+
 <!-- Menu Item for Tablets and Computers Only-->
-<li class="hidden-xs"> <a href="#a"> <i class="fa fa-glass"></i> <span>Party</span> <i class="fa fa-angle-right"></i> </a>
-    <div class="dropdown-menu flyout-menu">
+<li> <a href="#a"> <i class="fa fa-glass"></i> <span>Party</span> <i class="fa fa-angle-right"></i> </a>
+    <div class="dropdown-menu">
         <!-- Sub Menu -->
         <ul>
-            <li><a href="index.html">Birthday</a></li>
+            <li><a href="index.php">Birthday</a></li>
             <li><a href="about.html">Farewell</a></li>
             <li><a href="blog.html">Prom</a></li>
             <li><a href="blog-single.html">Date</a></li>
@@ -307,7 +309,7 @@
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
-            <li><a href="index.html">Interviews</a></li>
+            <li><a href="index.php">Interviews</a></li>
             <li><a href="about.html">Office Wear</a></li>
             <li><a href="blog.html">Presentations</a></li>
             <li><a href="blog-single.html">Business Meetings</a></li>
@@ -367,7 +369,7 @@
         <!-- Sub Menu -->
         <ul>
             <li><a href="blog-single.html">Football</a></li>
-            <li><a href="index.html">Cricket</a></li>
+            <li><a href="index.php">Cricket</a></li>
             <li><a href="about.html">Basket Ball</a></li>
             <li><a href="blog.html">Badminton</a></li>
             <li><a href="cart.html">Tennis</a></li>
@@ -382,7 +384,7 @@
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
-            <li><a href="index.html">Summer</a></li>
+            <li><a href="index.php">Summer</a></li>
             <li><a href="about.html">Winter</a></li>
             <li><a href="blog.html">Rainy</a></li>
             <li><a href="blog-single.html">Nightware</a></li>
@@ -410,7 +412,7 @@
     <!-- Navigation Buttons/Quick Cart for Tablets and Desktop Only -->
     <div class="menu-links hidden-xs">
         <ul class="nav nav-pills nav-justified">
-            <li> <a href="index.html"> <i class="fa fa-home fa-fw"></i> <span class="hidden-sm">Home</span></a> </li>
+            <li> <a href="index.php"> <i class="fa fa-home fa-fw"></i> <span class="hidden-sm">Home</span></a> </li>
             <li> <a href="about.html"> <i class="fa fa-info-circle fa-fw"></i> <span class="hidden-sm">About</span></a> </li>
             <li> <a href="blog.html"> <i class="fa fa-bullhorn fa-fw"></i> <span class="hidden-sm">Blog</span></a> </li>
             <li> <a href="contact.html"> <i class="fa fa-pencil-square-o fa-fw"></i> <span class="hidden-sm ">Contact</span></a> </li>
@@ -430,108 +432,49 @@
         </ul>
     </div>
     <!-- end: Navigation Buttons/Quick Cart Tablets and large screens Only -->
-    <!-- Top Searches for tablets and large screens -->
-    <div class="top-searchs hidden-xs"><span class="title">Top
-          Searches</span> <span class="links"> <a href="#a">Air Jordan Shoes 2010</a> | <a href="#a">Liz Claiborne</a> | <a href="#a">Tommy</a> | <a href="#a">J Crew ST Wedding</a> | <a href="#a">HTC One</a> | <a href="#a">Bridal</a></span> </div>
-    <!-- end: Top Searches -->
-
-    <!-- Quick Help for tablets and large screens -->
-    <div class="quick-message hidden-xs">
-        <div class="quick-box">
-            <div class="quick-slide"><span class="title">Help</span>
-                <div class="quickbox slide" id="quickbox">
-                    <div class="carousel-inner">
-                        <div class="item active"> <a href="#a"> <i class="fa fa-envelope fa-fw"></i> Quick Message</a> </div>
-                        <div class="item"> <a href="#a"> <i class="fa fa-question-circle fa-fw"></i> FAQ</a> </div>
-                        <div class="item"> <a href="#a"> <i class="fa fa-phone fa-fw"></i> (92)3009712255</a> </div>
-                    </div>
-                </div>
-                <a class="left carousel-control" data-slide="prev" href="#quickbox"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="right carousel-control" data-slide="next" href="#quickbox"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-        </div>
-    </div>
-    <!-- end: Quick Help -->
-
     <div class="clearfix"></div>
-    <!-- Iview Slider -->
-    <div class="slider">
-        <div id="iview">
-            <!-- Slide 1 -->
-            <div data-iview:image="images/slide0.jpg" data-iview:pausetime="60000">
-                <div class="iview-caption metro-box1 orange" data-transition="wipeUp" data-x="95" data-y="209"> <a href="#">
-                    <div class="box-hover"></div>
-                    <i class="fa fa-trophy fa-fw"></i> <span>Sports</span></a> </div>
-                <div class="iview-caption metro-box1 blue" data-transition="wipeUp" data-x="266" data-y="209"> <a href="#">
-                    <div class="box-hover"></div>
-                    <i class="fa fa-comment-o fa-fw"></i> <span>Casuals</span></a> </div>
-                <div class="iview-caption metro-box2" data-transition="expandLeft" data-x="438" data-y="209">
-                    <div class="monthlydeals">
-                        <div class="monthly-deals slide" id="monthly-deals">
-                            <div class="carousel-inner">
-                                <div class="item active"> <a href="#a"><span>Wedding</span><img alt="" src="images/slider-deal1.jpg"> </a> </div>
-                                <div class="item"> <a href="#a"><span>Birthday</span> <img alt="" src="images/slider-deal2.jpg"> </a> </div>
-                                <div class="item"> <a href="#a"><span>Farewell</span> <img alt="" src="images/slider-deal3.jpg"> </a> </div>
-                                <div class="item"> <a href="#a"><span>Date</span> <img alt="" src="images/slider-deal4.jpg"> </a> </div>
-                            </div>
-                        </div>
-                        <a class="left carousel-control" data-slide="prev" href="#monthly-deals"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="right carousel-control" data-slide="next" href="#monthly-deals"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-                    <!--  <span>Deals of the month</span> -->
-                </div>
-                <div class="iview-caption metro-box1 purple" data-transition="wipeDown" data-x="438" data-y="37"> <a href="#a">
-                    <div class="box-hover"></div>
-                    <i class="fa fa-female fa-fw"></i> <span>Ugadi</span></a> </div>
-                <div class="iview-caption metro-box1 dark-blue" data-transition="wipeDown" data-x="610" data-y="37"> <a href="#a">
-                    <div class="box-hover"></div>
-                    <i class="fa fa-male fa-fw"></i> <span>Good Friday</span></a> </div>
-                <div class="iview-caption metro-heading" data-transition="expandLeft" data-x="95" data-y="40">
-                    <h1>FLATRO ECOMMERCE HTML5</h1>
-                </div>
-                <div class="iview-caption metro-heading" data-transition="wipeLeft" data-x="95" data-y="100"> <span>Curabitur aliquet quam id dui posuere blandit. Ante ipsum primis
-                in faucibus orci luctus et ultrices posuere cubilia Curae, Donec velit
-                neque.<br>
-                <a href="#a">read more</a></span> </div>
-            </div>
-            <!-- Slide 1 -->
-            <div data-iview:image="images/slide1.jpg">
-                <div class="iview-caption caption1" data-transition="wipeUp" data-x="100" data-y="10">30%</div>
-                <div class="iview-caption caption2" data-easing="easeInOutElastic" data-transition="wipeLeft" data-x="100" data-y="140">SPECIAL
-                    OFFER</div>
-                <div class="iview-caption caption3" data-easing="easeInOutElastic" data-transition="wipeLeft" data-x="100" data-y="200">Enthusiastically
-                    orchestrate performance based<br>
-                    experiences via granular networks.</div>
-                <div class="iview-caption btn-more" data-transition="fade" data-x="100" data-y="280"><a href="#a">Learn
-                    more</a></div>
-            </div>
-            <!-- Slide 2 -->
-            <div data-iview:image="images/slide2.jpg">
-                <div class="iview-caption caption3 btm-bar" data-height="107px" data-transition="expandRight" data-width="867px" data-x="0" data-y="300">
-                    <h1><b>Metro style slider</b> bottom caption!</h1>
-                    <p>Energistically enable enabled vortals for cross-unit niche markets.
-                        Professionally leverage existing visionary customer service with virtual
-                        collaboration and idea-sharing. Distinctively foster ethical content
-                        whereas future-proof applications.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 </div>
 </div>
 </header>
 <!-- end: Header -->
 <!-- Products -->
-<!--<div class="row clearfix f-space30"></div>
+<!--<div class="row clearfix f-space30"></div>-->
 <div class="container">
   <div class="row">
+
+  <div class="col-md-12">
+      <div class="breadcrumb"> <a href="index.php"> <i class="fa fa-home fa-fw"></i> Home </a> <i class="fa fa-angle-right fa-fw"></i> <a href="category-grid.html"> Category Grid </a> </div>
+
+      <!-- Quick Help for tablets and large screens -->
+      <div class="quick-message hidden-xs">
+          <div class="quick-box">
+              <div class="quick-slide"> <span class="title">Help</span>
+                  <div class="quickbox slide" id="quickbox">
+                      <div class="carousel-inner">
+                          <div class="item active"> <a href="#"> <i class="fa fa-envelope fa-fw"></i> Quick Message</a> </div>
+                          <div class="item"> <a href="#"> <i class="fa fa-question-circle fa-fw"></i> FAQ</a> </div>
+                          <div class="item"> <a href="#"> <i class="fa fa-phone fa-fw"></i> (92)3009712255</a> </div>
+                      </div>
+                  </div>
+                  <a class="left carousel-control" data-slide="prev" href="#quickbox"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="right carousel-control" data-slide="next" href="#quickbox"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
+          </div>
+      </div>
+      <!-- end: Quick Help -->
+      <div class="clearfix"></div>
+  </div>
+  <div class="row clearfix f-space10"></div>
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 main-column box-block">
       <div class="box-heading"><span>Featured Products</span></div>
       <div class="box-content">
         <div class="box-products slide" id="productc1">
           <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#productc1"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#productc1"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-          <div class="carousel-inner"> 
-            &lt;!&ndash; Items Row &ndash;&gt;
+          <div class="carousel-inner">
+            <!-- Items Row -->
             <div class="item active">
-              <div class="row box-product"> 
-                &lt;!&ndash; Product &ndash;&gt;
+              <div class="row box-product">
+                <!-- Product -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -553,8 +496,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <div class="product-block">
                     <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
@@ -574,8 +517,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -597,14 +540,14 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
+                <!-- end: Product -->
               </div>
             </div>
-            &lt;!&ndash; end: Items Row &ndash;&gt;
-&lt;!&ndash; Items Row &ndash;&gt;
+            <!-- end: Items Row -->
+<!-- Items Row -->
             <div class="item">
-              <div class="row box-product"> 
-                &lt;!&ndash; Product &ndash;&gt;
+              <div class="row box-product">
+                <!-- Product -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <div class="product-block">
                     <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
@@ -624,8 +567,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -647,8 +590,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -670,10 +613,10 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
+                <!-- end: Product -->
               </div>
             </div>
-            &lt;!&ndash; end: Items Row &ndash;&gt;
+            <!-- end: Items Row -->
           </div>
         </div>
       </div>
@@ -687,8 +630,8 @@
             <li class="" data-slide-to="1" data-target="#productc2"></li>
             <li class="" data-slide-to="2" data-target="#productc2"></li>
           </ol>
-          <div class="carousel-inner"> 
-            &lt;!&ndash; item &ndash;&gt;
+          <div class="carousel-inner">
+            <!-- item -->
             <div class="item active">
               <div class="product-block">
                 <div class="image">
@@ -703,8 +646,8 @@
                 <div class="meta-back"></div>
               </div>
             </div>
-            &lt;!&ndash; end: item &ndash;&gt;
-&lt;!&ndash; item &ndash;&gt;
+            <!-- end: item -->
+<!-- item -->
             <div class="item">
               <div class="product-block">
                 <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
@@ -717,8 +660,8 @@
                 <div class="meta-back"></div>
               </div>
             </div>
-            &lt;!&ndash; end: item &ndash;&gt;
-&lt;!&ndash; item &ndash;&gt;
+            <!-- end: item -->
+<!-- item -->
             <div class="item">
               <div class="product-block">
                 <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
@@ -731,7 +674,7 @@
                 <div class="meta-back"></div>
               </div>
             </div>
-            &lt;!&ndash; end: item &ndash;&gt;
+            <!-- end: item -->
           </div>
         </div>
         <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#productc2"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#productc2"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
@@ -740,6 +683,7 @@
     </div>
   </div>
 </div>
+
 <div class="row clearfix f-space30"></div>
 <div class="container">
   <div class="row">
@@ -748,11 +692,11 @@
       <div class="box-content">
         <div class="box-products slide" id="productc3">
           <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#productc3"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#productc3"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-          <div class="carousel-inner"> 
-            &lt;!&ndash; Items Row &ndash;&gt;
+          <div class="carousel-inner">
+            <!-- Items Row -->
             <div class="item active">
-              <div class="row box-product"> 
-                &lt;!&ndash; Product &ndash;&gt;
+              <div class="row box-product">
+                <!-- Product -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -774,8 +718,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div class="product-block">
                     <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
@@ -795,8 +739,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -818,8 +762,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -841,14 +785,14 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
+                <!-- end: Product -->
               </div>
             </div>
-            &lt;!&ndash; end: Items Row &ndash;&gt;
-&lt;!&ndash; Items Row &ndash;&gt;
+            <!-- end: Items Row -->
+<!-- Items Row -->
             <div class="item">
-              <div class="row box-product"> 
-                &lt;!&ndash; Product &ndash;&gt;
+              <div class="row box-product">
+                <!-- Product -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div class="product-block">
                     <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
@@ -868,8 +812,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -891,8 +835,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -914,8 +858,8 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
+                <!-- end: Product -->
+<!-- Product -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div class="product-block">
                     <div class="image">
@@ -937,16 +881,16 @@
                     <div class="meta-back"></div>
                   </div>
                 </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
+                <!-- end: Product -->
               </div>
             </div>
-            &lt;!&ndash; end: Items Row &ndash;&gt;
+            <!-- end: Items Row -->
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>-->
+</div>
 <!-- end: Products -->
 <!-- Rectangle Banners -->
 <div class="row clearfix f-space30"></div>
@@ -1006,7 +950,7 @@
 <!-- Widgets -->
 <!--<div class="row clearfix f-space30"></div>
 <div class="container">
-  <div class="row"> 
+  <div class="row">
     &lt;!&ndash; Sidebar &ndash;&gt;
     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 box-block sidebar">
       <div class="box-heading"><span>Best Seller</span></div>
@@ -1018,7 +962,7 @@
             <li class="" data-slide-to="1" data-target="#productc4"></li>
             <li class="" data-slide-to="2" data-target="#productc4"></li>
           </ol>
-          <div class="carousel-inner"> 
+          <div class="carousel-inner">
             &lt;!&ndash; item &ndash;&gt;
             <div class="item active">
               <div class="product-block">
@@ -1091,10 +1035,10 @@
     &lt;!&ndash; end: Sidebar &ndash;&gt;
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
       <div class="row">
-        <div class="col-md-8 blog-block"> 
+        <div class="col-md-8 blog-block">
           &lt;!&ndash; Blog widget Box &ndash;&gt;
           <div class="box-content slide carousel-fade" id="blogslide">
-            <div class="carousel-inner"> 
+            <div class="carousel-inner">
               &lt;!&ndash; Post &ndash;&gt;
               <div class="blog-entry item">
                 <div class="image"> <span class="blogico"> <i class="fa fa-bullhorn fa-fw"></i><br>
@@ -1149,13 +1093,13 @@
           &lt;!&ndash; end: Blog widget Box &ndash;&gt;
           <div class="f-space10"></div>
         </div>
-        <div class="col-md-4 twitter-block"> 
+        <div class="col-md-4 twitter-block">
           &lt;!&ndash; twitter widget box &ndash;&gt;
           <div class="box-content">
             <div class="twitter-box"> <i class="fa fa-twitter fa-fw"></i>
               <div class="title">Latest Tweets</div>
               <div class="carousel-fade slide" id="tweets">
-                <div class="carousel-inner"> 
+                <div class="carousel-inner">
                   &lt;!&ndash; tweet &ndash;&gt;
                   <div class="tweet item active"><span>RT: <em>@Interactively</em> implement unique e-business with dynamic benefits. Authoritatively target
                     sustainable paradigms before strategic architectures. <b> http://goo.gl/4N8JN </b>- <em>@flatro</em> <br>
@@ -1176,7 +1120,7 @@
           <div class="f-space10"></div>
         </div>
       </div>
-      <div class="row"> 
+      <div class="row">
         &lt;!&ndash; Brands &ndash;&gt;
         <div class="col-md-12 main-column box-block brands-block">
           <div class="box-heading"><span>Populer Brands</span></div>

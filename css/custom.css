@@ -57,8 +57,6 @@
 @import url("../fonts/fontawesome/font-awesome.css");
 @import url("../fonts/lato/stylesheet.css");
 
-
-
 /*------------------------------------*\
    Global Styles
 \*------------------------------------*/
@@ -315,8 +313,10 @@ a.color3:hover {
 }
 .logotext {
 	float: left;
-	color: #444444;
-	font-size: 19px;
+
+    color: #FF0000;
+	font-size: 50px;
+    font-family: prakrta;
 	padding: 22px 0 0 10px;
 	line-height: 10px;
 }

@@ -99,4 +99,19 @@
     }
 }
 
+@font-face {
+    font-family: 'samarkan';
+    src: url('SAMARN_.TTF');
+}
+
+@font-face {
+    font-family: 'samaro';
+    src: url('SAMARO_.TTF');
+}
+
+@font-face {
+    font-family: 'prakrta';
+    src: url('prakrta_.ttf');
+}
+
 

@@ -66,210 +66,261 @@
 
 <body>
 <!-- Header -->
-<header> 
-  <!-- Top Heading Bar -->
-  <div class="container">
+<header>
+<!-- Top Heading Bar -->
+<div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="topheadrow">
-          <ul class="nav nav-pills pull-right">
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a">ENG <i class="fa fa-angle-down fa-fw"></i> </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#a">ENG</a></li>
-                <li><a href="#a">JPN</a></li>
-                <li><a href="#a">CHI</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a">USD <i class="fa fa-angle-down fa-fw"></i> </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#a">USD</a></li>
-                <li><a href="#a">PKR</a></li>
-                <li><a href="#a">JPY</a></li>
-              </ul>
-            </li>
-            <li> <a href="#a"> <i class="fa fa-shopping-cart fa-fw"></i> <span class="hidden-xs">My Cart</span></a> </li>
-            <li> <a href="#a"> <i class="fa fa-heart fa-fw"></i> <span class="hidden-xs">Wishlist(0)</span></a> </li>
-            <li class="dropdown"> <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#a"> <i class="fa fa-user fa-fw"></i> <span class="hidden-xs"> Login</span></a>
-              <div class="loginbox dropdown-menu"> <span class="form-header">Login</span>
-                <form role="form">
-                  <div class="form-group"> <i class="fa fa-user fa-fw"></i>
-                    <input class="form-control" id="InputUserName" placeholder="Username" type="text">
-                  </div>
-                  <div class="form-group"> <i class="fa fa-lock fa-fw"></i>
-                    <input class="form-control" id="InputPassword" placeholder="Password" type="password">
-                  </div>
-                  <button class="btn medium color1 pull-right" type="submit">Login</button>
-                </form>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end: Top Heading Bar -->
-  
-  <div class="f-space20"></div>
-  <!-- Logo and Search -->
-  <div class="container">
-    <div class="row clearfix">
-      <div class="col-lg-3 col-xs-12">
-        <div class="logo"> <a href="index.html" title="Flatro Template"><!-- <img alt="Flatro - Responsive Metro Inspired Flat ECommerce theme" src="images/logo2.png"> -->
-          <div class="logoimage"><i class="fa fa-shopping-cart fa-fw"></i></div>
-          <div class="logotext"><span><strong>FLATRO</strong></span><span>SHOP</span></div>
-          <span class="slogan">ONLINE STORE</span></a> </div>
-      </div>
-      <!-- end: logo -->
-      <div class="visible-xs f-space20"></div>
-      <!-- search -->
-      <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12 pull-right">
-        <div class="searchbar">
-          <form action="#">
-            <ul class="pull-left">
-              <li class="input-prepend dropdown" data-select="true"> <a class="add-on dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#a"> <span class="dropdown-display">All
-                Categories</span> <i class="fa fa-sort fa-fw"></i> </a> 
-                <!-- this hidden field is used to contain the selected option from the dropdown -->
-                <input class="dropdown-field" type="hidden" value="All Categories"/>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#a" data-value="Men Wear">Men Wear</a></li>
-                  <li><a href="#a" data-value="Women Wear">Women Wear</a></li>
-                  <li><a href="#a" data-value="Music">Music</a></li>
-                  <li><a href="#a" data-value="Mobile Phones">Mobile Phones</a></li>
-                  <li><a href="#a" data-value="Computers">Computers</a></li>
-                  <li><a href="#a" data-value="Gaming">Gaming</a></li>
-                  <li><a href="#a" data-value="Gift Ideas">Gift Ideas</a></li>
-                  <li><a href="#a" data-value="All Categories">All Categories</a></li>
-                </ul>
-              </li>
-            </ul>
-            <div class="searchbox pull-left">
+        <div class="col-md-12" >
+
+
+            <div class="topheadrow">
+                <!-- Logo -->
+                <div class="logo"> <a href="index.php" title="Tryncee"><!-- <img alt="Flatro - Responsive Metro Inspired Flat ECommerce theme" src="images/logo2.png"> -->
+                    <!-- <div class="logoimage"><i class="fa fa-shopping-cart fa-fw"></i></div> -->
+                    <div class="logotext"><span><strong>TRYNCEE</strong></span><span></span></div>
+                    <span class="slogan"></span></a>
+                </div>
+                <!-- End Logo -->
+
+
+                <ul class="nav nav-pills pull-right">
+
+
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a">Men <i class="fa fa-angle-down fa-fw"></i> </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#a">Birthday</a></li>
+                            <li><a href="#a">New Year</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a">Women <i class="fa fa-angle-down fa-fw"></i> </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#a">Birthday</a></li>
+                            <li><a href="#a">New Year</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li> <a href="#a"> <i class="fa fa-shopping-cart fa-fw"></i> <span class="hidden-xs">My Cart</span></a> </li> -->
+                    <li> <a href="#a"> <i class="fa fa-heart fa-fw"></i> <span class="hidden-xs">Wishlist(0)</span></a> </li>
+                    <li class="dropdown"> <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#a"> <i class="fa fa-user fa-fw"></i> <span class="hidden-xs"> Login</span></a>
+                        <div class="loginbox dropdown-menu"> <span class="form-header">Login</span>
+                            <form>
+                                <div class="form-group"> <i class="fa fa-user fa-fw"></i>
+                                    <input class="form-control" id="InputUserName" placeholder="Username" type="text" data-validation="required">
+                                </div>
+                                <div class="form-group"> <i class="fa fa-lock fa-fw"></i>
+                                    <input class="form-control" id="InputPassword" placeholder="Password" type="password" data-validation="required">
+                                </div>
+                                <button class="btn medium color1 pull-right" type="submit">Login</button>
+                            </form>
+                        </div>
+                    </li>
+                    <!-- this hidden field is used to contain the selected option from the dropdown -->
+                    <!--<input class="dropdown-field" type="hidden" value="All Categories"/>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a">All Categories<i class="fa fa-angle-down fa-fw"></i> </a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#a">Party</a></li>
+                        <li><a href="#a">Festivals</a></li>
+                        <li><a href="#a">Formals</a></li>
+                        <li><a href="#a">Sports</a></li>
+                        <li><a href="#a">Casuals</a></li>
+                        <li><a href="#a">Trendy</a></li>
+                        <li><a href="#a">Funky</a></li>
+                        <li><a href="#a">Accessories</a></li>
+
+                      </ul>
+                    </li>
+                    <li>
+
+                  &lt;!&ndash;<form action="#">
+
               <input class="searchinput" id="search" placeholder="Search..." type="search">
               <button class="fa fa-search fa-fw" type="submit"></button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- end: search --> 
-      
-    </div>
-  </div>
-  <!-- end: Logo and Search -->
-  <div class="f-space20"></div>
-  <!-- Menu -->
-  <div class="container">
-    <div class="row clearfix">
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 menu-col">
-        <div class="menu-heading menuHeadingdropdown"> <span> <i class="fa fa-bars"></i> Categories <i class="fa fa-angle-down"></i></span> </div>
-        <!-- Mega Menu -->
-        <div class="menu3dmega vertical menuMegasub" id="menuMega">
-          <ul>
-            <!-- Menu Item Links for Mobiles Only -->
-            <li class="visible-xs"> <a href="index.html"> <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-right"></i> </a>
-              <div class="dropdown-menu flyout-menu"> 
-                <!-- Sub Menu -->
-                <ul>
-                  <li><a href="about.html">About us</a></li>
-                  <li><a href="blog.html">Blog</a></li>
-                  <li> <a href="#a"><span>Account</span> <i class="fa fa-caret-right"></i> </a>
-                    <ul class="dropdown-menu sub flyout-menu">
-                      <li><a href="#a">Login/Register</a></li>
-                      <li><a href="#a">My Orders</a></li>
-                      <li><a href="#a">Wish list</a></li>
-                      <li><a href="cart.html">Shopping Cart</a></li>
-                      <li><a href="checkout.html">Checkout</a></li>
-                    </ul>
-                  </li>
-                  <li> <a href="#a"><span>Product</span> <i class="fa fa-caret-right"></i> </a>
-                    <ul class="dropdown-menu sub flyout-menu">
-                      <li><a href="category-grid.html">Category Grid</a></li>
-                      <li><a href="category-list.html">Category List</a></li>
-                      <li><a href="product.html">Product Page</a> </li>
-                    </ul>
-                  </li>
-                  <li><a href="cart.html">Shoping Cart</a></li>
-                  <li><a href="checkout.html">Checkout</a></li>
-                  <li><a href="blog-single.html">Blog Post</a></li>
-                  <li><a href="contact.html">Contact us</a></li>
+          </form>&ndash;&gt;
+
+			</li>-->
+
                 </ul>
-                <!-- end: Sub Menu --> 
-              </div>
-            </li>
-            <!-- end: Menu Item --> 
-            <!-- Menu Item for Tablets and Computers Only-->
-            <li class="hidden-xs"> <a href="#a"> <i class="fa fa-files-o"></i> <span>Pages</span> <i class="fa fa-angle-right"></i> </a>
-              <div class="dropdown-menu flyout-menu"> 
-                <!-- Sub Menu -->
-                <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About us</a></li>
-                  <li><a href="blog.html">Blog</a></li>
-                  <li><a href="blog-single.html">Blog Post</a></li>
-                  <li> <a href="#a"><span>Product</span> <i class="fa fa-caret-right"></i> </a>
-                    <ul class="dropdown-menu sub flyout-menu">
-                      <li><a href="category-grid.html">Category Grid</a></li>
-                      <li><a href="category-list.html">Category List</a></li>
-                      <li><a href="product.html">Product Page</a> </li>
-                    </ul>
-                  </li>
-                  <li><a href="cart.html">Shoping Cart</a></li>
-                  <li><a href="checkout.html">Checkout</a></li>
-                  <li><a href="contact.html">Contact us</a></li>
-                </ul>
-                <!-- end: Sub Menu --> 
-              </div>
-            </li>
-            <!-- end: Menu Item --> 
-            <!-- Menu Item -->
-            <li> <a href="#a"> <i class="fa fa-male"></i> <span>Men Wear</span> <i class="fa fa-angle-right"></i> </a>
-              <div class="dropdown-menu"> 
-                <!-- Sub Menu -->
-                <div class="content">
-                  <div class="row">
-                    <div class="col-md-4"> <a class="menu-title" href="#a">Fashion</a>
-                      <ul>
-                        <li><a href="#a">Clothing</a></li>
-                        <li><a href="#a">Shoes</a></li>
-                        <li><a href="#a">Handbags</a></li>
-                        <li><a href="#a">Accessories</a></li>
-                        <li><a href="#a">Luggage</a></li>
-                        <li><a href="#a">Jewelry</a></li>
-                      </ul>
+
+                <!-- top search -->
+                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12 pull-right">
+                    <div class="searchbar">
+                        <form action="#">
+                            <ul class="nav nav-pills pull-left">
+                                <li class="input-prepend dropdown" data-select="true"> <a class="add-on dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#a"> <span class="dropdown-display">All
+                Categories</span> <i class="fa fa-sort fa-fw"></i> </a>
+                                    <!-- this hidden field is used to contain the selected option from the dropdown -->
+                                    <input class="dropdown-field" type="hidden" value="All Categories"/>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#a" data-value="Men Wear">Men Wear</a></li>
+                                        <li><a href="#a" data-value="Women Wear">Women Wear</a></li>
+                                        <li><a href="#a" data-value="Music">Music</a></li>
+                                        <li><a href="#a" data-value="Mobile Phones">Mobile Phones</a></li>
+                                        <li><a href="#a" data-value="Computers">Computers</a></li>
+                                        <li><a href="#a" data-value="Gaming">Gaming</a></li>
+                                        <li><a href="#a" data-value="Gift Ideas">Gift Ideas</a></li>
+                                        <li><a href="#a" data-value="All Categories">All Categories</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="searchbox pull-left">
+                                <input class="searchinput" id="search" placeholder="Search..." type="search">
+                                <button class="fa fa-search fa-fw" type="submit"></button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-md-4"> <a class="menu-title" href="#a">Shirts</a>
-                      <ul>
-                        <li><a href="#a">Reguler Shirts</a></li>
-                        <li><a href="#a">Slim Shirts</a></li>
-                        <li><a href="#a">Fashion Shirts</a></li>
+                </div>
+                <!-- end top search -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end: Top Heading Bar -->
+
+<div class="f-space20"></div>
+<div class="f-space20"></div>
+<!-- Menu -->
+<div class="container">
+<div class="row clearfix">
+<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 menu-col">
+<div class="menu-heading menuHeadingdropdown"> <span> <i class="fa fa-bars"></i> Categories</span> </div>
+<!-- Mega Menu -->
+<div class="menu3dmega vertical menuMegasub" id="menuMega">
+<ul>
+<!-- Menu Item Links for Mobiles Only -->
+<li class="visible-xs"> <a href="index.php"> <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-right"></i> </a>
+    <div class="dropdown-menu flyout-menu">
+        <!-- Sub Menu -->
+        <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li> <a href="#a"><span>Account</span> <i class="fa fa-caret-right"></i> </a>
+                <ul class="dropdown-menu sub flyout-menu">
+                    <li><a href="#a">Login/Register</a></li>
+                    <li><a href="#a">My Orders</a></li>
+                    <li><a href="#a">Wish list</a></li>
+                    <li><a href="cart.html">Shopping Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </li>
+            <li> <a href="#a"><span>Product</span> <i class="fa fa-caret-right"></i> </a>
+                <ul class="dropdown-menu sub flyout-menu">
+                    <li><a href="category-grid.html">Category Grid</a></li>
+                    <li><a href="category-list.html">Category List</a></li>
+                    <li><a href="product.html">Product Page</a> </li>
+                </ul>
+            </li>
+            <li><a href="cart.html">Shoping Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="blog-single.html">Blog Post</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+        <!-- end: Sub Menu -->
+    </div>
+</li>
+<!-- end: Menu Item -->
+
+<!-- Menu Item for Tablets and Computers Only-->
+<li> <a href="#a"> <i class="fa fa-glass"></i> <span>Party</span> <i class="fa fa-angle-right"></i> </a>
+    <div class="dropdown-menu">
+        <!-- Sub Menu -->
+        <ul>
+            <li><a href="index.php">Birthday</a></li>
+            <li><a href="about.html">Farewell</a></li>
+            <li><a href="blog.html">Prom</a></li>
+            <li><a href="blog-single.html">Date</a></li>
+            <li> <a href="#a"><span>Weddding</span> <i class="fa fa-caret-right"></i> </a>
+                <ul class="dropdown-menu sub flyout-menu">
+                    <li><a href="category-grid.html">Host</a></li>
+                    <li><a href="category-list.html">Attendee</a></li>
+                    <!--<li><a href="product.html">Product Page</a> </li>-->
+                </ul>
+            </li>
+            <li><a href="cart.html">College Fests</a></li>
+            <li><a href="checkout.html">Dinner</a></li>
+            <li><a href="contact.html">Halloween</a></li>
+        </ul>
+        <!-- end: Sub Menu -->
+    </div>
+</li>
+<!-- end: Menu Item -->
+<!-- Menu Item -->
+<li> <a href="#a"> <i class="fa fa-star"></i> <span>Festivals</span> <i class="fa fa-angle-right"></i> </a>
+    <div class="dropdown-menu">
+        <!-- Sub Menu -->
+        <div class="content">
+            <div class="row">
+                <div class="col-md-4"> <a class="menu-title" href="#a">Hindu</a>
+                    <ul>
+                        <li><a href="#a">Diwali</a></li>
+                        <li><a href="#a">Pongal</a></li>
+                        <li><a href="#a">Dussehra</a></li>
+                        <li><a href="#a">Ugadi</a></li>
+                        <li><a href="#a">Bihu</a></li>
+                        <li><a href="#a">Holi</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4"> <a class="menu-title" href="#a">Muslim</a>
+                    <ul>
+                        <li><a href="#a">Eid</a></li>
+                        <li><a href="#a">Ramadan</a></li>
+                        <!--<li><a href="#a">Fashion Shirts</a></li>
                         <li><a href="#a">Black Shirts</a></li>
                         <li><a href="#a">White Shirts</a></li>
-                        <li><a href="#a">Gray Shirts</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-md-4"> <a class="menu-title" href="#a">Jeans</a>
-                      <ul>
-                        <li><a href="#a">Reguler Jeans</a></li>
-                        <li><a href="#a">Slim-fit Jeans</a></li>
+                        <li><a href="#a">Gray Shirts</a></li>-->
+                    </ul>
+                </div>
+                <div class="col-md-4"> <a class="menu-title" href="#a">Christian</a>
+                    <ul>
+                        <li><a href="#a">New Year</a></li>
+                        <li><a href="#a">Christmas</a></li>
+                        <li><a href="#a">Good Friday</a></li>
+                        <!--<li><a href="#a">Top Jeans</a></li>
+                        <li><a href="#a">New Jeans</a></li>
+                        <li><a href="#a">Color Jeans</a></li>-->
+                    </ul>
+                </div>
+                <div class="col-md-4"> <a class="menu-title" href="#a">Others</a>
+                    <ul>
+                        <li><a href="#a">Karvachauth</a></li>
+                        <!--<li><a href="#a">Slim-fit Jeans</a></li>
                         <li><a href="#a">Loose Jeans</a></li>
                         <li><a href="#a">Top Jeans</a></li>
                         <li><a href="#a">New Jeans</a></li>
-                        <li><a href="#a">Color Jeans</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p> <a href="#a"><img alt="" src="images/menu-ad.jpg"></a> </p>
-                    </div>
-                  </div>
+                        <li><a href="#a">Color Jeans</a></li>-->
+                    </ul>
                 </div>
-                <!-- end: Sub Menu --> 
-              </div>
-            </li>
-            <!-- end: Menu Item --> 
-            <!-- Menu Item -->
-            <li> <a href="#a"> <i class="fa fa-female"></i> <span>Women Wear</span> <i class="fa fa-angle-right"></i> </a>
-              <div class="dropdown-menu"> 
-                <!-- Sub Menu -->
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p> <a href="#a"><img alt="" src="images/menu-ad.jpg"></a> </p>
+                </div>
+            </div>
+        </div>
+        <!-- end: Sub Menu -->
+    </div>
+</li>
+<!-- end: Menu Item -->
+<!-- Menu Item -->
+<li class="hidden-xs"> <a href="#a"> <i class="fa fa-user"></i> <span>Formals</span> <i class="fa fa-angle-right"></i> </a>
+    <div class="dropdown-menu flyout-menu">
+        <!-- Sub Menu -->
+        <ul>
+            <li><a href="index.php">Interviews</a></li>
+            <li><a href="about.html">Office Wear</a></li>
+            <li><a href="blog.html">Presentations</a></li>
+            <li><a href="blog-single.html">Business Meetings</a></li>
+            <li><a href="cart.html">Graduation</a></li>
+            <li><a href="checkout.html">Reunion</a></li>
+            <!--<li><a href="contact.html">Halloween</a></li>-->
+        </ul>
+        <!-- end: Sub Menu -->
+    </div>
+</li>
+<!--<li> <a href="#a"> <i class="fa fa-female"></i> <span>Formals</span> <i class="fa fa-angle-right"></i> </a>
+  <div class="dropdown-menu">
+    &lt;!&ndash; Sub Menu &ndash;&gt;
                 <div class="content">
                   <div class="row">
                     <div class="col-md-5"> <a class="menu-title" href="#a">Fashion</a>
@@ -282,80 +333,108 @@
                         <li><a href="#a">Jewelry</a></li>
                       </ul>
                     </div>
-                    <div class="col-md-7">
+                    &lt;!&ndash;<div class="col-md-7">
                       <div class="product-block">
-                        <div class="image">
-                          <div class="product-label product-sale"><span>SALE</span></div>
-                          <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                        <div class="product-meta">
-                          <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                          <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                          <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                            Cart</a> </div>
-                          <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                          <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                          <div class="small-btns">
-                            <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                            <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                            <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
+                          <div class="image">
+                              <div class="product-label product-sale"><span>SALE</span></div>
+                              <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
+                          <div class="product-meta">
+                              <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
+                              <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
+                              <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
+                                  Cart</a> </div>
+                              <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
+                              <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+                              <div class="small-btns">
+                                  <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
+                                  <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
+                                  <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
+                              </div>
                           </div>
-                        </div>
-                        <div class="meta-back"></div>
+                          <div class="meta-back"></div>
                       </div>
-                    </div>
+                  </div>&ndash;&gt;
                   </div>
                 </div>
-                <!-- end: Sub Menu --> 
+                &lt;!&ndash; end: Sub Menu &ndash;&gt;
               </div>
-            </li>
-            <!-- end: Menu Item --> 
-            <!-- Menu Item -->
-            <li> <a href="#a"> <i class="fa fa-video-camera"></i> <span>Digital Camera</span></a> </li>
-            <!-- end: Menu Item --> 
-            <!-- Menu Item -->
-            <li> <a href="#a"> <i class="fa fa-mobile"></i> <span>Mobile Phones</span></a> </li>
-            <!-- end: Menu Item --> 
-            <!-- Menu Item -->
-            <li> <a href="#a"> <i class="fa fa-laptop"></i> <span>Computers</span></a> </li>
-            <!-- end: Menu Item --> 
-            <!-- Menu Item -->
-            <li> <a href="#a"> <i class="fa fa-gamepad"></i> <span>Gaming</span></a> </li>
-            <!-- end: Menu Item --> 
-            <!-- Menu Item -->
-            <li> <a href="#a"> <i class="fa fa-gift"></i> <span>Gift Ideas</span></a> </li>
-            <!-- end: Menu Item -->
-          </ul>
-        </div>
-        <!-- end: Mega Menu --> 
-      </div>
-      <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 menu-col-2"> 
-        <!-- Navigation Buttons/Quick Cart for Tablets and Desktop Only -->
-        <div class="menu-links hidden-xs">
-          <ul class="nav nav-pills nav-justified">
-            <li> <a href="index.html"> <i class="fa fa-home fa-fw"></i> <span class="hidden-sm">Home</span></a> </li>
+            </li>-->
+<!-- end: Menu Item -->
+<!-- Menu Item -->
+<!--            <li> <a href="#a"> <i class="fa fa-mobile"></i> <span>Mobile Phones</span></a> </li>-->
+<li class="hidden-xs"> <a href="#a"> <i class="fa fa-trophy"></i> <span>Sports</span> <i class="fa fa-angle-right"></i> </a>
+    <div class="dropdown-menu flyout-menu">
+        <!-- Sub Menu -->
+        <ul>
+            <li><a href="blog-single.html">Football</a></li>
+            <li><a href="index.php">Cricket</a></li>
+            <li><a href="about.html">Basket Ball</a></li>
+            <li><a href="blog.html">Badminton</a></li>
+            <li><a href="cart.html">Tennis</a></li>
+        </ul>
+        <!-- end: Sub Menu -->
+    </div>
+</li>
+<!-- end: Menu Item -->
+<!-- Menu Item -->
+<!--<li> <a href="#a"> <i class="fa fa-video-camera"></i> <span>Digital Camera</span></a> </li>-->
+<li class="hidden-xs"> <a href="#a"> <i class="fa fa-files-o"></i> <span>Casuals</span> <i class="fa fa-angle-right"></i> </a>
+    <div class="dropdown-menu flyout-menu">
+        <!-- Sub Menu -->
+        <ul>
+            <li><a href="index.php">Summer</a></li>
+            <li><a href="about.html">Winter</a></li>
+            <li><a href="blog.html">Rainy</a></li>
+            <li><a href="blog-single.html">Nightware</a></li>
+
+        </ul>
+        <!-- end: Sub Menu -->
+    </div>
+</li>
+<!-- end: Menu Item -->
+
+<!-- Menu Item -->
+<li> <a href="#a"> <i class="fa fa-laptop"></i> <span>Trendy</span></a> </li>
+<!-- end: Menu Item -->
+<!-- Menu Item -->
+<li> <a href="#a"> <i class="fa fa-thumbs-up"></i> <span>Funky</span></a> </li>
+<!-- end: Menu Item -->
+<!-- Menu Item -->
+<li> <a href="#a"> <i class="fa fa-gift"></i> <span>Accessories</span></a> </li>
+<!-- end: Menu Item -->
+</ul>
+</div>
+<!-- end: Mega Menu -->
+</div>
+<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 menu-col-2">
+    <!-- Navigation Buttons/Quick Cart for Tablets and Desktop Only -->
+    <div class="menu-links hidden-xs">
+        <ul class="nav nav-pills nav-justified">
+            <li> <a href="index.php"> <i class="fa fa-home fa-fw"></i> <span class="hidden-sm">Home</span></a> </li>
             <li> <a href="about.html"> <i class="fa fa-info-circle fa-fw"></i> <span class="hidden-sm">About</span></a> </li>
             <li> <a href="blog.html"> <i class="fa fa-bullhorn fa-fw"></i> <span class="hidden-sm">Blog</span></a> </li>
             <li> <a href="contact.html"> <i class="fa fa-pencil-square-o fa-fw"></i> <span class="hidden-sm ">Contact</span></a> </li>
-            <li class="dropdown"> <a href="cart.html"> <i class="fa fa-shopping-cart fa-fw"></i> <span class="hidden-sm"> 5 items | $4530.00</span></a> 
-              <!-- Quick Cart -->
-              <div class="dropdown-menu quick-cart">
-                <div class="qc-row qc-row-heading"> <span class="qc-col-qty">QTY.</span> <span class="qc-col-name">5 items in bag</span> <span class="qc-col-price">$4530.00</span> </div>
-                <div class="qc-row qc-row-item"> <span class="qc-col-qty">2</span> <span class="qc-col-name"><a href="#a">Women Fashion hot Wear item</a></span> <span class="qc-col-price">$500</span> <span class="qc-col-remove"> <i class="fa fa-times fa-fw"></i> </span> </div>
-                <div class="qc-row qc-row-item"> <span class="qc-col-qty">1</span> <span class="qc-col-name"><a href="#a">Women Fashion hot Wear item</a></span> <span class="qc-col-price">$800</span> <span class="qc-col-remove"> <i class="fa fa-times fa-fw"></i> </span> </div>
-                <div class="qc-row qc-row-item"> <span class="qc-col-qty">3</span> <span class="qc-col-name"><a href="#a">Women Fashion hot Wear item</a></span> <span class="qc-col-price">$252.25</span> <span class="qc-col-remove"> <i class="fa fa-times fa-fw"></i> </span> </div>
-                <div class="qc-row-bottom"><a class="btn qc-btn-viewcart" href="#a">view
-                  cart</a><a class="btn qc-btn-checkout" href="#a">check
-                  out</a></div>
-              </div>
-              <!-- end: Quick Cart --> 
+            <li class="dropdown"> <a href="cart.html"> <i class="fa fa-shopping-cart fa-fw"></i> <span class="hidden-sm"> 5 items | $4530.00</span></a>
+                <!-- Quick Cart -->
+                <div class="dropdown-menu quick-cart">
+                    <div class="qc-row qc-row-heading"> <span class="qc-col-qty">QTY.</span> <span class="qc-col-name">5 items in bag</span> <span class="qc-col-price">$4530.00</span> </div>
+                    <div class="qc-row qc-row-item"> <span class="qc-col-qty">2</span> <span class="qc-col-name"><a href="#a">Women Fashion hot Wear item</a></span> <span class="qc-col-price">$500</span> <span class="qc-col-remove"> <i class="fa fa-times fa-fw"></i> </span> </div>
+                    <div class="qc-row qc-row-item"> <span class="qc-col-qty">1</span> <span class="qc-col-name"><a href="#a">Women Fashion hot Wear item</a></span> <span class="qc-col-price">$800</span> <span class="qc-col-remove"> <i class="fa fa-times fa-fw"></i> </span> </div>
+                    <div class="qc-row qc-row-item"> <span class="qc-col-qty">3</span> <span class="qc-col-name"><a href="#a">Women Fashion hot Wear item</a></span> <span class="qc-col-price">$252.25</span> <span class="qc-col-remove"> <i class="fa fa-times fa-fw"></i> </span> </div>
+                    <div class="qc-row-bottom"><a class="btn qc-btn-viewcart" href="#a">view
+                        cart</a><a class="btn qc-btn-checkout" href="#a">check
+                        out</a></div>
+                </div>
+                <!-- end: Quick Cart -->
             </li>
-          </ul>
-        </div>
-        <!-- end: Navigation Buttons/Quick Cart Tablets and large screens Only --> 
-        
-      </div>
+        </ul>
     </div>
-  </div>
+    <!-- end: Navigation Buttons/Quick Cart Tablets and large screens Only -->
+    <div class="clearfix"></div>
+
+</div>
+</div>
+</div>
 </header>
 <!-- end: Header -->
 
@@ -363,7 +442,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="breadcrumb"> <a href="index.html"> <i class="fa fa-home fa-fw"></i> Home </a> <i class="fa fa-angle-right fa-fw"></i> <a href="product.html"> Product </a> </div>
+      <div class="breadcrumb"> <a href="index.php"> <i class="fa fa-home fa-fw"></i> Home </a> <i class="fa fa-angle-right fa-fw"></i> <a href="product.html"> Product </a> </div>
       
       <!-- Quick Help for tablets and large screens -->
       <div class="quick-message hidden-xs">

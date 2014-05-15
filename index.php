@@ -459,36 +459,36 @@
         <div id="iview">
             <!-- Slide 1 -->
             <div data-iview:image="images/slide0.jpg" data-iview:pausetime="60000">
-                <div class="iview-caption metro-box1 orange" data-transition="wipeUp" data-x="95" data-y="209"> <a href="#">
+                <div class="iview-caption metro-box1 orange" data-transition="wipeUp" data-x="95" data-y="209"> <a href="categorylist.php">
                     <div class="box-hover"></div>
                     <i class="fa fa-trophy fa-fw"></i> <span>Sports</span></a> </div>
-                <div class="iview-caption metro-box1 blue" data-transition="wipeUp" data-x="266" data-y="209"> <a href="#">
+                <div class="iview-caption metro-box1 blue" data-transition="wipeUp" data-x="266" data-y="209"> <a href="categorylist.php">
                     <div class="box-hover"></div>
                     <i class="fa fa-comment-o fa-fw"></i> <span>Casuals</span></a> </div>
                 <div class="iview-caption metro-box2" data-transition="expandLeft" data-x="438" data-y="209">
                     <div class="monthlydeals">
                         <div class="monthly-deals slide" id="monthly-deals">
                             <div class="carousel-inner">
-                                <div class="item active"> <a href="#a"><span>Wedding</span><img alt="" src="images/slider-deal1.jpg"> </a> </div>
-                                <div class="item"> <a href="#a"><span>Birthday</span> <img alt="" src="images/slider-deal2.jpg"> </a> </div>
-                                <div class="item"> <a href="#a"><span>Farewell</span> <img alt="" src="images/slider-deal3.jpg"> </a> </div>
-                                <div class="item"> <a href="#a"><span>Date</span> <img alt="" src="images/slider-deal4.jpg"> </a> </div>
+                                <div class="item active"> <a href="productlist.php"><span>Wedding</span><img alt="" src="images/slider-deal1.jpg"> </a> </div>
+                                <div class="item"> <a href="productlist.php"><span>Birthday</span> <img alt="" src="images/slider-deal2.jpg"> </a> </div>
+                                <div class="item"> <a href="productlist.php"><span>Farewell</span> <img alt="" src="images/slider-deal3.jpg"> </a> </div>
+                                <div class="item"> <a href="productlist.php"><span>Date</span> <img alt="" src="images/slider-deal4.jpg"> </a> </div>
                             </div>
                         </div>
                         <a class="left carousel-control" data-slide="prev" href="#monthly-deals"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="right carousel-control" data-slide="next" href="#monthly-deals"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
                     <!--  <span>Deals of the month</span> -->
                 </div>
-                <div class="iview-caption metro-box1 purple" data-transition="wipeDown" data-x="438" data-y="37"> <a href="#a">
+                <div class="iview-caption metro-box1 purple" data-transition="wipeDown" data-x="438" data-y="37"> <a href="productlist.php">
                     <div class="box-hover"></div>
                     <i class="fa fa-female fa-fw"></i> <span>Ugadi</span></a> </div>
-                <div class="iview-caption metro-box1 dark-blue" data-transition="wipeDown" data-x="610" data-y="37"> <a href="#a">
+                <div class="iview-caption metro-box1 dark-blue" data-transition="wipeDown" data-x="610" data-y="37"> <a href="productlist.php">
                     <div class="box-hover"></div>
                     <i class="fa fa-male fa-fw"></i> <span>Good Friday</span></a> </div>
                 <div class="iview-caption metro-heading" data-transition="expandLeft" data-x="95" data-y="40">
                     <h1>TRYNCEE</h1>
                 </div>
                 <div class="iview-caption metro-heading" data-transition="wipeLeft" data-x="95" data-y="100"> <span>Perfect Suggestions for Perfect Occasions<br>
-                <a href="#a">read more</a></span> </div>
+                <a href="about.html">read more</a></span> </div>
             </div>
             <!-- Slide 1 -->
             <div data-iview:image="images/slide1.jpg">

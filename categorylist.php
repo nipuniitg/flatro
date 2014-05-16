@@ -445,7 +445,8 @@
   <div class="row">
 
   <div class="col-md-12">
-      <div class="breadcrumb"> <a href="index.php"> <i class="fa fa-home fa-fw"></i> Home </a> <i class="fa fa-angle-right fa-fw"></i> <a href="category-grid.html"> Category Grid </a> </div>
+      <div class="breadcrumb"> <a href="index.php"> <i class="fa fa-home fa-fw"></i> Home </a> <i class="fa fa-angle-right fa-fw"></i> <a href="category-grid.html"> <?php $categoryType = $_POST['categoryType']; echo $categoryType ;?>
+	 </a> </div>
 
       <!-- Quick Help for tablets and large screens -->
       <div class="quick-message hidden-xs">
@@ -664,7 +665,7 @@
 <!-- item -->
             <div class="item">
               <div class="product-block">
-                <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
+                <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/prod.jpeg" title="product title"></a> </div>
                 <div class="product-meta">
                   <div class="name"><a href="product.html">Blue Stylish Handbag</a></div>
                   <div class="big-price"> <span class="price-new"><span class="sym">$</span>1600</span> </div>
@@ -684,213 +685,81 @@
   </div>
 </div>
 
-<div class="row clearfix f-space30"></div>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-column box-block">
-      <div class="box-heading"><span>Recent Products</span></div>
-      <div class="box-content">
-        <div class="box-products slide" id="productc3">
-          <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#productc3"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#productc3"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-          <div class="carousel-inner">
-            <!-- Items Row -->
-            <div class="item active">
-              <div class="row box-product">
-                <!-- Product -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                <!-- end: Product -->
-<!-- Product -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Female Strips Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                <!-- end: Product -->
-<!-- Product -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-new"><span>NEW</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                <!-- end: Product -->
-<!-- Product -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                <!-- end: Product -->
-              </div>
-            </div>
-            <!-- end: Items Row -->
-<!-- Items Row -->
-            <div class="item">
-              <div class="row box-product">
-                <!-- Product -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Female Strips Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                <!-- end: Product -->
-<!-- Product -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-new"><span>NEW</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                <!-- end: Product -->
-<!-- Product -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                <!-- end: Product -->
-<!-- Product -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                <!-- end: Product -->
-              </div>
-            </div>
-            <!-- end: Items Row -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+<?php
+
+	// Retrieve the hidden form variable (using PHP).
+	$myvar = $_POST['formVar'];
+	//echo $categoryType;
+	//echo $myvar;
+	require('includes/configure.php');
+	$query_str = "SELECT subcategory,sub_id as subid FROM level1 where category=$myvar";
+	$result = mysqli_query($con,$query_str);
+	if(!$result){
+		echo 'Error	1';
+	}
+	else{
+		while($row = $result->fetch_object())
+		{
+			echo "<div class=\"row clearfix f-space30\"></div>";
+			echo "<div class=\"container\">";
+				echo "<div class=\"row\">";
+				echo "<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 main-column box-block\">";
+				echo "<div class=\"box-heading\"><span>{$row->subcategory}</span></div>";
+				echo "<div class=\"box-content\">";
+					echo "<div class=\"box-products slide\" id=\"productc3\">";
+					echo "<div class=\"carousel-controls\"> <a class=\"carousel-control left\" data-slide=\"prev\" href=\"#productc3\"> <i class=\"fa fa-angle-left fa-fw\"></i> </a> <a class=\"carousel-control right\" data-slide=\"next\" href=\"#productc3\"> <i class=\"fa fa-angle-right fa-fw\"></i> </a> </div>";
+					echo "<div class=\"carousel-inner\">";
+					//Items Row
+					echo "<div class=\"item active\">";
+					echo "<div class=\"row box-product\">";
+					//product
+					echo "<div class=\"col-lg-3 col-md-3 col-sm-6 col-xs-12\">";
+					echo "<div class=\"product-block\">";
+					
+					$product_str = "SELECT * FROM tagdata_shristi where id IN (SELECT id FROM {$categoryType} WHERE sub_occasion=$row->subid)";
+					$pro_result = mysqli_query($con,$product_str);
+					if(!$pro_result){
+						echo 'Error	';
+					}
+					else
+					{
+					$pro_row = $pro_result->fetch_object();
+					echo "<div class=\"image\"> <a class=\"img\" href=\"product.php\"><img alt=\"product info\" src=\"$pro_row->imageurl\" title=\"product title\"></a> </div>";
+					echo "<div class=\"product-meta\">";
+					echo "<div class=\"name\"><a href=\"product.php\">$pro_row->Product</a></div>";
+					echo "<div class=\"big-price\"> <span class=\"price-new\"><span class=\"sym\">$</span>$pro_row->price</span> <span class=\"price-old\"><span class=\"sym\">$</span>$pro_row->mrp</span> </div>";
+					echo "<div class=\"big-btns\"> <a class=\"btn btn-default btn-view pull-left\" href=\"product.php\">View</a>  <a class=\"btn btn-default btn-addtocart pull-right\" href=\"product.php\">Add to
+                        Cart</a>  </div>";
+					echo "<div class=\"small-price\"> <span class=\"price-new\"><span class=\"sym\">$</span>$pro_row->price</span> <span class=\"price-old\"><span class=\"sym\">$</span>$pro_row->mrp</span> </div>";
+					echo "<div class=\"rating\"> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star-half-o\"></i> <i class=\"fa fa-star-o\"></i> </div>";
+					echo "<div class=\"small-btns\">
+                        <button class=\"btn btn-default btn-compare pull-left\" data-toggle=\"tooltip\" title=\"Add to Compare\"> <i class=\"fa fa-retweet fa-fw\"></i> </button>
+                        <button class=\"btn btn-default btn-wishlist pull-left\" data-toggle=\"tooltip\" title=\"Add to Wishlist\"> <i class=\"fa fa-heart fa-fw\"></i> </button>
+                        <button class=\"btn btn-default btn-addtocart pull-left\" data-toggle=\"tooltip\" title=\"Add to Cart\"> <i class=\"fa fa-shopping-cart fa-fw\"></i> </button>
+                      </div>";
+					  
+					echo "</div>";
+					echo "<div class=\"meta-back\"></div>";
+					}
+					
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+					echo "</div>";
+				echo "</div>";
+				echo "</div>";
+				echo "</div>";
+			echo "</div>";
+		}
+		
+	}
+	//echo "myvar: ".$myvar;
+?>
+
 <!-- end: Products -->
 <!-- Rectangle Banners -->
 <div class="row clearfix f-space30"></div>

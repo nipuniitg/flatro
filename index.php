@@ -105,7 +105,7 @@
                     <!-- <li> <a href="#a"> <i class="fa fa-shopping-cart fa-fw"></i> <span class="hidden-xs">My Cart</span></a> </li> -->
                     <li> <a href="#a"> <i class="fa fa-heart fa-fw"></i> <span class="hidden-xs">Wishlist(0)</span></a> </li>
                     <li class="dropdown"> <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#a"> <i class="fa fa-user fa-fw"></i> <span class="hidden-xs"> Login</span></a>
-                        <div class="loginbox dropdown-menu"> <span class="form-header">Login</span>
+                        <div class="loginbox dropdown-menu"> <span class="form-header">Subscribe</span>
                             <form>
                                 <div class="form-group"> <i class="fa fa-user fa-fw"></i>
                                     <input class="form-control" id="InputUserName" placeholder="Username" type="text" data-validation="required">
@@ -222,8 +222,19 @@
     </div>
 </li>
 <!-- end: Menu Item -->
+
+<!--  In each of the above three cases, the hidden variable in the code below is needed for it all to work.
+Also notice how the destination page is given here, rather than in anything above -->
+
+<form method=post name="myform" action="categorylist.php">
+	<input type="hidden" name="formVar" value="">
+	<input type="hidden" name="categoryType" value="">
+	<input type="submit" style="display:none;">
+</form>
+
 <!-- Menu Item for Tablets and Computers Only-->
-<li class="hidden-xs"> <a href="categorylist.php"> <i class="fa fa-glass"></i> <span>Party</span> <i class="fa fa-angle-right"></i> </a>
+
+<li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='1'; document.myform.categoryType.value='Party';; document.myform.submit(); return false"> <i class="fa fa-glass"></i> <span>Party</span> <i class="fa fa-angle-right"></i> </a>
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>

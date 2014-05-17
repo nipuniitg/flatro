@@ -208,8 +208,8 @@
             </li>
             <li> <a href="#a"><span>Product</span> <i class="fa fa-caret-right"></i> </a>
                 <ul class="dropdown-menu sub flyout-menu">
-                    <li><a href="category-grid.html">Category Grid</a></li>
-                    <li><a href="category-list.html">Category List</a></li>
+                    <li><a href="productlist.php">Category Grid</a></li>
+                    <li><a href="categorylist.php">Category List</a></li>
                     <li><a href="product.html">Product Page</a> </li>
                 </ul>
             </li>
@@ -496,7 +496,7 @@ Also notice how the destination page is given here, rather than in anything abov
                     <div class="box-hover"></div>
                     <i class="fa fa-male fa-fw"></i> <span>Good Friday</span></a> </div>
                 <div class="iview-caption metro-heading" data-transition="expandLeft" data-x="95" data-y="40">
-                    <h1>TRYNCEE</h1>
+                    <h1>tryNcee</h1>
                 </div>
                 <div class="iview-caption metro-heading" data-transition="wipeLeft" data-x="95" data-y="100"> <span>Perfect Suggestions for Perfect Occasions<br>
                 <a href="about.html">read more</a></span> </div>

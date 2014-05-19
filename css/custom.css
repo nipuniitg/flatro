@@ -1093,8 +1093,11 @@ a.color3:hover {
 
 }
 .product-block .image .img {
-	display: block;
+	/*display: block;
+	width: 100%;*/
+	display: inline-block;
 	width: 100%;
+	
 }
 .product-block .image .img img {
 
@@ -1108,6 +1111,7 @@ a.color3:hover {
 	transition: transform 0.8s;
 	vertical-align: middle;
 	width: 100%;
+<<<<<<< HEAD
 	*/
     border: 0px;
     height: auto;
@@ -1115,6 +1119,14 @@ a.color3:hover {
     transition: transform 0.8s;
     vertical-align: middle;
 
+=======
+	/* width:auto; max-width:100%; max-height:100%;
+	border: 0px;
+		
+	transition: transform 0.8s;
+	vertical-align: middle;*/
+	/*width: 100%;*/
+>>>>>>> 6e14402f117a11dc830b3e3b21aa164c2972a8c5
 }
 .product-block .image .product-label {
 	color: #ffffff;

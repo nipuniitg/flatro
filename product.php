@@ -205,8 +205,8 @@
             </li>
             <li> <a href="#a"><span>Product</span> <i class="fa fa-caret-right"></i> </a>
                 <ul class="dropdown-menu sub flyout-menu">
-                    <li><a href="productlist.php">Category Grid</a></li>
-                    <li><a href="categorylist.php">Category List</a></li>
+                    <li><a href="category-grid.html">Category Grid</a></li>
+                    <li><a href="category-list.html">Category List</a></li>
                     <li><a href="product.html">Product Page</a> </li>
                 </ul>
             </li>
@@ -231,8 +231,8 @@
             <li><a href="blog-single.html">Date</a></li>
             <li> <a href="#a"><span>Weddding</span> <i class="fa fa-caret-right"></i> </a>
                 <ul class="dropdown-menu sub flyout-menu">
-                    <li><a href="productlist.php">Host</a></li>
-                    <li><a href="categorylist.php">Attendee</a></li>
+                    <li><a href="category-grid.html">Host</a></li>
+                    <li><a href="category-list.html">Attendee</a></li>
                     <!--<li><a href="product.html">Product Page</a> </li>-->
                 </ul>
             </li>

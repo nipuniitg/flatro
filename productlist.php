@@ -209,7 +209,7 @@
                 <ul class="dropdown-menu sub flyout-menu">
                     <li><a href="category-grid.html">Category Grid</a></li>
                     <li><a href="category-list.html">Category List</a></li>
-                    <li><a href="product.html">Product Page</a> </li>
+                    <li><a href="product.php">Product Page</a> </li>
                 </ul>
             </li>
             <li><a href="cart.html">Shoping Cart</a></li>
@@ -235,7 +235,7 @@
                 <ul class="dropdown-menu sub flyout-menu">
                     <li><a href="category-grid.html">Host</a></li>
                     <li><a href="category-list.html">Attendee</a></li>
-                    <!--<li><a href="product.html">Product Page</a> </li>-->
+                    <!--<li><a href="product.php">Product Page</a> </li>-->
                 </ul>
             </li>
             <li><a href="cart.html">College Fests</a></li>
@@ -339,9 +339,9 @@
                       <div class="product-block">
                           <div class="image">
                               <div class="product-label product-sale"><span>SALE</span></div>
-                              <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
+                              <a class="img" href="product.php"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
                           <div class="product-meta">
-                              <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
+                              <div class="name"><a href="product.php">Ladies Stylish Handbag</a></div>
                               <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
                               <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
                                   Cart</a> </div>
@@ -439,6 +439,8 @@
 </div>
 </header>
 <!-- end: Header -->
+
+
 <!-- Products -->
 <!--<div class="row clearfix f-space30"></div>-->
 <div class="container">
@@ -464,52 +466,264 @@
       <!-- end: Quick Help -->
       <div class="clearfix"></div>
   </div>
-  <div class="row clearfix f-space10"></div>
-  <div class="container">
+
+
+
+  <?php
+
+  /*
+  $occ = $_POST['occ'];     //getting occasion
+  $occ_id = $_POST['occ_id'];   // getting occasion id
+  $subocc_id = $_POST['subocc_id']; // getting sub-occasion id
+  $subocc = $_POST['subocc'];   // getting sub-occasion
+  */
+  $occ = 'Party';
+  $occ_id = 1;
+  $subocc = 'Birthday';
+  $subocc_id = 1;
+  $limitpage = 9;
+  $sortby = 1;
+  $page_no = 1;
+
+  require('includes/configure.php');
+
+?>
+
+  <script>
+      var start_image = 1;  // start number of image in div
+      var count_images = "<?php echo $limitpage; ?>";    // number of images to be loaded on hitting load more images button
+
+      function loadimages( pagenum ){
+
+
+          //alert("No errors?");
+            start_image = start_image + count_images;
+          var subocc_id = "<?php echo $subocc_id; ?>";
+          var occ = "<?php echo $occ; ?>";
+
+          //alert(subocc_id);
+          if (window.XMLHttpRequest) {
+              // code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+          } else { // code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function() {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                  /*if(xmlhttp.responseText == "No More Images")
+                  {
+                        document.getElementById("loadmore").innerHTML = "No More Images";
+                  }else{*/
+                      document.getElementById("boxproducts").innerHTML= document.getElementById("boxproducts").innerHTML + xmlhttp.responseText;
+                  //}
+
+
+              }
+
+          }
+          //alert(pagenum);
+          xmlhttp.open("GET","prodlistajax.php?occ="+occ+"&subocc_id="+subocc_id+"&startnum="+start_image+"&limit="+count_images,true);
+          //alert("opened");
+          xmlhttp.send();
+
+
+      }
+
+      /*
+      function getpage( pagenum ){
+            //alert("No errors?");
+
+          var subocc_id = "<?php //echo $subocc_id; ?>";
+          var occ = "<?php //echo $occ; ?>";
+
+          //alert(subocc_id);
+          if (window.XMLHttpRequest) {
+              // code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+          } else { // code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function() {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                  document.getElementById("boxproducts").innerHTML=xmlhttp.responseText;
+
+              }
+
+          }
+            //alert(pagenum);
+          xmlhttp.open("GET","prodlistajax.php?q="+2+"&occ="+occ+"&subocc_id="+subocc_id+"&pagenum="+pagenum+"&limit="+prodnum,true);
+          //alert("opened");
+          xmlhttp.send();
+
+
+      }
+      */
+/*
+      function limitprods( prodnum ){
+
+       var subocc_id = "<?php //echo $subocc_id; ?>";
+       var occ = "<?php //echo $occ; ?>";
+        //alert(subocc_id);
+          if (window.XMLHttpRequest) {
+              // code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+          } else { // code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function() {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                  document.getElementById("boxproducts").innerHTML=xmlhttp.responseText;
+
+              }
+
+          }
+
+         xmlhttp.open("GET","prodlistajax.php?q="+1+"&occ="+occ+"&subocc_id="+subocc_id+"&limit="+prodnum,true);
+         xmlhttp.send();
+
+
+     }
+     */
+  </script>
+
+<?php
+  echo "<div class=\"row clearfix f-space10\"></div>
+          <div class=\"container\">
+          <div class=\"row\">
+          <div class=\"col-md-9 col-sm-12 col-xs-12 box-block\">
+          <div class=\"box-heading category-heading\"><span>Showing 1-9 of 240 products</span>
+              <ul class=\"nav nav-pills pull-right\">
+                  <!--<li class=\"dropdown\"> <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" data-hover=\"dropdown\" href=\"#\"> Products per page <i class=\"fa fa-sort fa-fw\"></i> </a>
+              <ul class=\"dropdown-menu\" role=\"menu\">
+                          <li><a href=\"#\" onclick=\"limitprods(9);\">9 per page</a></li>
+                          <li><a href=\"#\" onclick=\"limitprods(12);\">12 per page</a></li>
+                          <li><a href=\"#\" onclick=\"limitprods(15);\">15 per page</a></li>
+                          <li><a href=\"#\" onclick=\"limitprods(18);\">18 per page</a></li>
+                          <li><a href=\"#\" onclick=\"limitprods(21);\">21 per page</a></li>
+                          <li><a href=\"#\" onclick=\"limitprods(100);\">100 per page</a></li>
+                          <li><a href=\"#\" onclick=\"limitprods(1000);\">Show all</a></li>
+                      </ul>
+                  </li>-->
+                  <li class=\"dropdown\"> <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" data-hover=\"dropdown\" href=\"#a\"> Sort by <i class=\"fa fa-sort fa-fw\"></i> </a>
+                      <ul class=\"dropdown-menu\" role=\"menu\">
+                          <li><a href=\"#a\">Name (A-Z)</a></li>
+                          <li><a href=\"#a\">Name (Z-A)</a></li>
+                          <li><a href=\"#a\">Price (Low-High)</a></li>
+                          <li><a href=\"#a\">Price (High-Low)</a></li>
+                          <li><a href=\"#a\">Rating Highest</a></li>
+                          <li><a href=\"#a\">Rating Lowest</a></li>
+                          <li><a href=\"#a\">Recent</a></li>
+                      </ul>
+                  </li>
+                  <!--<li class=\"view-list\"> <a href=\"category-list.html\"> <i class=\"fa fa-list-ul fa-fw\"></i></a> </li>
+                  <li class=\"view-grid active\"> <a href=\"category-grid.html\"> <i class=\"fa fa-th-large fa-fw\"></i></a> </li>-->
+              </ul>
+          </div>
+          <div class=\"row clearfix f-space20\"></div>
+  <div class=\"box-content\">
+  <div id=\"boxproducts\" class=\"box-products\">";
+
+
+  //$query_str = "SELECT id FROM $occ where sub_occasion=$subocc_id limit $limitpage";
+  $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) limit $limitpage";
+  //echo $query_str;
+  $result = mysqli_query($con,$query_str);
+  if(!$result){
+      echo 'Error	2';
+  }
+  else{
+    $count = 1;
+  while($row = $result->fetch_object())
+  {
+      if($count % 3 == 1)
+      {
+          echo "<div class=\"row box-product\">";
+      }
+        echo "<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">
+              <div class=\"product-block\">
+                  <div class=\"image\">
+                      <div class=\"product-label product-sale\"><span>New</span></div>
+                      <a class=\"img\" href=\"product.php\"><img alt=\"product info\" src=\"$row->imageurl\" title=\"product title\"></a> </div>
+                  <div class=\"product-meta\">
+                      <div class=\"name\"><a href=\"product.php\">$row->Product</a></div>
+                      <div class=\"big-price\"> <span class=\"price-new\"><span class=\"sym\">&#8377;</span>$row->price</span> <span class=\"price-old\"><span class=\"sym\">&#8377</span>$row->mrp</span> </div>
+                      <div class=\"big-btns\"> <a class=\"btn btn-default btn-view pull-left\" href=\"#\">View</a> <a class=\"btn btn-default btn-addtocart pull-right\" href=\"#\">Add to
+                          Cart</a> </div>
+                      <div class=\"small-price\"> <span class=\"price-new\"><span class=\"sym\">&#8377;</span>$row->price</span> <span class=\"price-old\"><span class=\"sym\">&#8377;</span>$row->mrp</span> </div>
+                      <div class=\"rating\"> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star-half-o\"></i> <i class=\"fa fa-star-o\"></i> </div>
+                      <div class=\"small-btns\">
+                          <button class=\"btn btn-default btn-compare pull-left\" data-toggle=\"tooltip\" title=\"Add to Compare\"> <i class=\"fa fa-retweet fa-fw\"></i> </button>
+                          <button class=\"btn btn-default btn-wishlist pull-left\" data-toggle=\"tooltip\" title=\"Add to Wishlist\"> <i class=\"fa fa-heart fa-fw\"></i> </button>
+                          <button class=\"btn btn-default btn-addtocart pull-left\" data-toggle=\"tooltip\" title=\"Add to Cart\"> <i class=\"fa fa-shopping-cart fa-fw\"></i> </button>
+                      </div>
+                  </div>
+                  <div class=\"meta-back\"></div>
+              </div>
+          </div>";
+
+
+      if($count % 3 == 0)
+      {
+          echo "</div>";
+          echo "<div class=\"clearfix f-space30\"></div>";
+      }
+      $count = $count + 1;
+
+  }
+      if($count % 3 != 0)
+      {
+          echo "</div>";
+          //echo "<div class=\"clearfix f-space30\"></div>";
+      }
+  }
+  ?>
+
+<!--  <div class="row clearfix f-space10"></div>-->
+<!--  <div class="container">-->
   <!-- row -->
-  <div class="row">
-  <div class="col-md-9 col-sm-12 col-xs-12 box-block">
-  <div class="box-heading category-heading"><span>Showing 1-9 of 240 products</span>
-      <ul class="nav nav-pills pull-right">
-          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a"> 9 per page <i class="fa fa-sort fa-fw"></i> </a>
-              <ul class="dropdown-menu" role="menu">
-                  <li><a href="#a">12 per page</a></li>
-                  <li><a href="#a">15 per page</a></li>
-                  <li><a href="#a">18 per page</a></li>
-                  <li><a href="#a">21 per page</a></li>
-                  <li><a href="#a">100 per page</a></li>
-                  <li><a href="#a">Show all</a></li>
-              </ul>
-          </li>
-          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a"> Sort by <i class="fa fa-sort fa-fw"></i> </a>
-              <ul class="dropdown-menu" role="menu">
-                  <li><a href="#a">Name (A-Z)</a></li>
-                  <li><a href="#a">Name (Z-A)</a></li>
-                  <li><a href="#a">Price (Low-High)</a></li>
-                  <li><a href="#a">Price (High-Low)</a></li>
-                  <li><a href="#a">Rating Highest</a></li>
-                  <li><a href="#a">Rating Lowest</a></li>
-                  <li><a href="#a">Recent</a></li>
-              </ul>
-          </li>
-          <li class="view-list"> <a href="category-list.html"> <i class="fa fa-list-ul fa-fw"></i></a> </li>
-          <li class="view-grid active"> <a href="category-grid.html"> <i class="fa fa-th-large fa-fw"></i></a> </li>
-      </ul>
-  </div>
-  <div class="row clearfix f-space20"></div>
-  <div class="box-content">
-  <div class="box-products">
-
+<!--  <div class="row">-->
+<!--  <div class="col-md-9 col-sm-12 col-xs-12 box-block">-->
+<!--  <div class="box-heading category-heading"><span>Showing 1-9 of 240 products</span>-->
+<!--      <ul class="nav nav-pills pull-right">-->
+<!--          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a"> 9 per page <i class="fa fa-sort fa-fw"></i> </a>-->
+<!--              <ul class="dropdown-menu" role="menu">-->
+<!--                  <li><a href="#a">12 per page</a></li>-->
+<!--                  <li><a href="#a">15 per page</a></li>-->
+<!--                  <li><a href="#a">18 per page</a></li>-->
+<!--                  <li><a href="#a">21 per page</a></li>-->
+<!--                  <li><a href="#a">100 per page</a></li>-->
+<!--                  <li><a href="#a">Show all</a></li>-->
+<!--              </ul>-->
+<!--          </li>-->
+<!--          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a"> Sort by <i class="fa fa-sort fa-fw"></i> </a>-->
+<!--              <ul class="dropdown-menu" role="menu">-->
+<!--                  <li><a href="#a">Name (A-Z)</a></li>-->
+<!--                  <li><a href="#a">Name (Z-A)</a></li>-->
+<!--                  <li><a href="#a">Price (Low-High)</a></li>-->
+<!--                  <li><a href="#a">Price (High-Low)</a></li>-->
+<!--                  <li><a href="#a">Rating Highest</a></li>-->
+<!--                  <li><a href="#a">Rating Lowest</a></li>-->
+<!--                  <li><a href="#a">Recent</a></li>-->
+<!--              </ul>-->
+<!--          </li>-->
+<!--          <li class="view-list"> <a href="category-list.html"> <i class="fa fa-list-ul fa-fw"></i></a> </li>-->
+<!--          <li class="view-grid active"> <a href="category-grid.html"> <i class="fa fa-th-large fa-fw"></i></a> </li>-->
+<!--      </ul>-->
+<!--  </div>-->
+<!--  <div class="row clearfix f-space20"></div>-->
+<!--  <div class="box-content">-->
+<!--  <div class="box-products">-->
+<!---->
   <!-- Products Row -->
-  <div class="row box-product">
+<!--  <div class="row box-product">-->
       <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="product-block">
               <div class="image">
                   <div class="product-label product-sale"><span>SALE</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
+                  <a class="img" href="product.php"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
               <div class="product-meta">
-                  <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
+                  <div class="name"><a href="product.php">Ladies Stylish Handbag</a></div>
                   <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
                   <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
                       Cart</a> </div>
@@ -523,14 +737,14 @@
               </div>
               <div class="meta-back"></div>
           </div>
-      </div>
+      </div>-->
       <!-- end: Product -->
       <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="product-block">
-              <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
+              <div class="image"> <a class="img" href="product.php"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
               <div class="product-meta">
-                  <div class="name"><a href="product.html">Female Strips Handbag</a></div>
+                  <div class="name"><a href="product.php">Female Strips Handbag</a></div>
                   <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
                   <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
                       Cart</a> </div>
@@ -544,16 +758,16 @@
               </div>
               <div class="meta-back"></div>
           </div>
-      </div>
+      </div>-->
       <!-- end: Product -->
       <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="product-block">
               <div class="image">
                   <div class="product-label product-new"><span>NEW</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
+                  <a class="img" href="product.php"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
               <div class="product-meta">
-                  <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
+                  <div class="name"><a href="product.php">Blue Fashion Bag</a></div>
                   <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
                   <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
                       Cart</a> </div>
@@ -567,175 +781,35 @@
               </div>
               <div class="meta-back"></div>
           </div>
-      </div>
+      </div>-->
       <!-- end: Product -->
-  </div>
+<!-- </div>-->
 
   <!-- end: Products Row -->
 
-  <div class="clearfix f-space30"></div>
-  <!-- Products Row -->
-  <div class="row box-product">
-      <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="product-block">
-              <div class="image">
-                  <div class="product-label product-sale"><span>SALE</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-              <div class="product-meta">
-                  <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                      Cart</a> </div>
-                  <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                  <div class="small-btns">
-                      <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                      <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                      <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                  </div>
-              </div>
-              <div class="meta-back"></div>
-          </div>
-      </div>
-      <!-- end: Product -->
-      <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="product-block">
-              <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-              <div class="product-meta">
-                  <div class="name"><a href="product.html">Female Strips Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                      Cart</a> </div>
-                  <div class="small-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                  <div class="small-btns">
-                      <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                      <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                      <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                  </div>
-              </div>
-              <div class="meta-back"></div>
-          </div>
-      </div>
-      <!-- end: Product -->
-      <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="product-block">
-              <div class="image">
-                  <div class="product-label product-new"><span>NEW</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-              <div class="product-meta">
-                  <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                      Cart</a> </div>
-                  <div class="small-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                  <div class="small-btns">
-                      <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                      <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                      <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                  </div>
-              </div>
-              <div class="meta-back"></div>
-          </div>
-      </div>
-      <!-- end: Product -->
-  </div>
-
-  <!-- end: Products Row -->
-
-  <div class="clearfix f-space30"></div>
-  <!-- Products Row -->
-  <div class="row box-product">
-      <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="product-block">
-              <div class="image">
-                  <div class="product-label product-sale"><span>SALE</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-              <div class="product-meta">
-                  <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                      Cart</a> </div>
-                  <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                  <div class="small-btns">
-                      <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                      <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                      <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                  </div>
-              </div>
-              <div class="meta-back"></div>
-          </div>
-      </div>
-      <!-- end: Product -->
-      <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="product-block">
-              <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-              <div class="product-meta">
-                  <div class="name"><a href="product.html">Female Strips Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                      Cart</a> </div>
-                  <div class="small-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                  <div class="small-btns">
-                      <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                      <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                      <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                  </div>
-              </div>
-              <div class="meta-back"></div>
-          </div>
-      </div>
-      <!-- end: Product -->
-      <!-- Product -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="product-block">
-              <div class="image">
-                  <div class="product-label product-new"><span>NEW</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-              <div class="product-meta">
-                  <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                      Cart</a> </div>
-                  <div class="small-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                  <div class="small-btns">
-                      <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                      <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                      <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                  </div>
-              </div>
-              <div class="meta-back"></div>
-          </div>
-      </div>
-      <!-- end: Product -->
-  </div>
-
-  <!-- end: Products Row -->
+  <div id="loadmore">
+      <button type="button" onclick="loadimages();" class="btn btn-default btn-lg btn-block center-block">
+          Load More Images
+      </button>
 
   </div>
+  </div>
+
   </div>
   <div class="clearfix f-space30"></div>
-  <span class="pull-left">Showing 1-9 of 240 products</span>
-  <div class="pull-right">
+
+  <!--<span class="pull-left">Showing 1-9 of 240 products</span>
+  <div id="page" class="pull-right">
       <ul class="pagination pagination-lg">
           <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-          <li  class="active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
+          <li  class="active"><a href="#" onclick="getpage(1);">1</a></li>
+          <li><a href="#" onclick="getpage(2);">2</a></li>
+          <li><a href="#" onclick="getpage(3);">3</a></li>
+          <li><a href="#" onclick="getpage(4);">4</a></li>
+          <li><a href="#" onclick="getpage(5);">5</a></li>
           <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
       </ul>
-  </div>
+  </div>-->
   </div>
 
   <!-- side bar -->
@@ -857,7 +931,7 @@
       <div class="box-heading"><span>Compare</span></div>
       <!-- Compare -->
       <div class="box-content">
-          <div class="compare"> <span><a href="product.html">Ladies Stylish Handbag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span> <span><a href="product.html">Female Strips Handbag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span> <span><a href="product.html">Blue Fashion Bag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span>
+          <div class="compare"> <span><a href="product.php">Ladies Stylish Handbag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span> <span><a href="product.php">Female Strips Handbag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span> <span><a href="product.php">Blue Fashion Bag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span>
               <button class="btn color1 normal pull-right" type="submit">Compare</button>
           </div>
 
@@ -965,9 +1039,9 @@
               <div class="product-block">
                 <div class="image">
                   <div class="product-label product-hot"><span>HOT</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
+                  <a class="img" href="product.php"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
                 <div class="product-meta">
-                  <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
+                  <div class="name"><a href="product.php">Ladies Stylish Handbag</a></div>
                   <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> </div>
                   <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
                     Cart</a> </div>
@@ -979,9 +1053,9 @@
 &lt;!&ndash; item &ndash;&gt;
             <div class="item">
               <div class="product-block">
-                <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
+                <div class="image"> <a class="img" href="product.php"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
                 <div class="product-meta">
-                  <div class="name"><a href="product.html">Strips Stylish Handbag</a></div>
+                  <div class="name"><a href="product.php">Strips Stylish Handbag</a></div>
                   <div class="big-price"> <span class="price-new"><span class="sym">$</span>654.87</span> </div>
                   <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
                     Cart</a> </div>
@@ -993,9 +1067,9 @@
 &lt;!&ndash; item &ndash;&gt;
             <div class="item">
               <div class="product-block">
-                <div class="image"> <a class="img" href="product.html"> <img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
+                <div class="image"> <a class="img" href="product.php"> <img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
                 <div class="product-meta">
-                  <div class="name"><a href="product.html">Females Stylish Handbag</a></div>
+                  <div class="name"><a href="product.php">Females Stylish Handbag</a></div>
                   <div class="big-price"> <span class="price-new"><span class="sym">$</span>1600</span> </div>
                   <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
                     Cart</a> </div>

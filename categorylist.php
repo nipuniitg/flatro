@@ -707,81 +707,50 @@
 		echo 'Error	1';
 	}
 	else{
+		$subid=10;
 		while($row = $result->fetch_object())
 		{
+		
 			echo "<div class=\"row clearfix f-space30\"></div>";
 			echo "<div class=\"container\">";
 				echo "<div class=\"row\">";
-				echo "<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12 main-column box-block\">";
-				echo "<div class=\"box-heading\"><span>{$row->subcategory}</span></div>";
-				echo "<div class=\"box-content\">";
-					echo "<div class=\"box-products slide\" id=\"productc3\">";
-					echo "<div class=\"carousel-controls\"> <a class=\"carousel-control left\" data-slide=\"prev\" href=\"#productc3\"> <i class=\"fa fa-angle-left fa-fw\"></i> </a> <a class=\"carousel-control right\" data-slide=\"next\" href=\"#productc3\"> <i class=\"fa fa-angle-right fa-fw\"></i> </a> </div>";
-					echo "<div class=\"carousel-inner\">";
-					//Items Row
-					echo "<div class=\"item active\">";
-					echo "<div class=\"row box-product\">";
-					//product
-					echo "<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">";
-					echo "<div class=\"product-block\">";
-					
-					$product_str = "SELECT * FROM tagdata_shristi where id IN (SELECT id FROM {$categoryType} WHERE sub_occasion=$row->subid)";
-					$pro_result = mysqli_query($con,$product_str);
-					if(!$pro_result){
-						echo 'Error	';
-					}
-					else
-					{
-					$pro_row = $pro_result->fetch_object();
-					echo "<div class=\"image\"> <a class=\"img\" href=\"product.php\"><img alt=\"product info\" src=\"$pro_row->imageurl\" title=\"product title\"></a> </div>";
-					echo "<div class=\"product-meta\">";
-					echo "<div class=\"name\"><a href=\"product.php\">$pro_row->Product</a></div>";
-					echo "<div class=\"big-price\"> <span class=\"price-new\"><span class=\"sym\">$</span>$pro_row->price</span> <span class=\"price-old\"><span class=\"sym\">$</span>$pro_row->mrp</span> </div>";
-					echo "<div class=\"big-btns\"> <a class=\"btn btn-default btn-view pull-left\" href=\"product.php\">View</a>  <a class=\"btn btn-default btn-addtocart pull-right\" href=\"product.php\">Add to
-                        Cart</a>  </div>";
-					echo "<div class=\"small-price\"> <span class=\"price-new\"><span class=\"sym\">$</span>$pro_row->price</span> <span class=\"price-old\"><span class=\"sym\">$</span>$pro_row->mrp</span> </div>";
-					echo "<div class=\"rating\"> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star\"></i> <i class=\"fa fa-star-half-o\"></i> <i class=\"fa fa-star-o\"></i> </div>";
-					echo "<div class=\"small-btns\">
-                        <button class=\"btn btn-default btn-compare pull-left\" data-toggle=\"tooltip\" title=\"Add to Compare\"> <i class=\"fa fa-retweet fa-fw\"></i> </button>
-                        <button class=\"btn btn-default btn-wishlist pull-left\" data-toggle=\"tooltip\" title=\"Add to Wishlist\"> <i class=\"fa fa-heart fa-fw\"></i> </button>
-                        <button class=\"btn btn-default btn-addtocart pull-left\" data-toggle=\"tooltip\" title=\"Add to Cart\"> <i class=\"fa fa-shopping-cart fa-fw\"></i> </button>
-                      </div>";
-					  
-					echo "</div>";
-					echo "<div class=\"meta-back\"></div>";
-					}
-					
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-				echo "</div>";
-				echo "</div>";
-			
-			if($row = $result->fetch_object())
+				
+			for($j=0;$j<2;$j++)//$j is counter for carousels in row. 
 			{
+			$subid=$subid+1;
 				echo "<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12 main-column box-block\">";
 				echo "<div class=\"box-heading\"><span>{$row->subcategory}</span></div>";
 				echo "<div class=\"box-content\">";
-					echo "<div class=\"box-products slide\" id=\"productc3\">";
-					echo "<div class=\"carousel-controls\"> <a class=\"carousel-control left\" data-slide=\"prev\" href=\"#productc3\"> <i class=\"fa fa-angle-left fa-fw\"></i> </a> <a class=\"carousel-control right\" data-slide=\"next\" href=\"#productc3\"> <i class=\"fa fa-angle-right fa-fw\"></i> </a> </div>";
+					echo "<div class=\"box-products slide\" id=\"productc{$subid}\">";
+					echo "<div class=\"carousel-controls\"> <a class=\"carousel-control left\" data-slide=\"prev\" href=\"#productc{$subid}\"> <i class=\"fa fa-angle-left fa-fw\"></i> </a> <a class=\"carousel-control right\" data-slide=\"next\" href=\"#productc{$subid}\"> <i class=\"fa fa-angle-right fa-fw\"></i> </a> </div>";
 					echo "<div class=\"carousel-inner\">";
-					//Items Row
-					echo "<div class=\"item active\">";
-					echo "<div class=\"row box-product\">";
-					//product
-					echo "<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">";
-					echo "<div class=\"product-block\">";
 					
-					$product_str = "SELECT * FROM tagdata_shristi where id IN (SELECT id FROM {$categoryType} WHERE sub_occasion=$row->subid)";
+					$product_str = "SELECT * FROM tagdata_shristi where id IN (SELECT id FROM {$categoryType} WHERE sub_occasion=$row->subid) limit 6";//6 are the number of items to be displayed in one carousel
 					$pro_result = mysqli_query($con,$product_str);
+					
+					
+					for($k=0;$k<3;$k++)//$k is counter for item in carousel
+					{
+					//Items Row
+					if($k==1)
+					echo "<div class=\"item active\">";
+					else
+					echo "<div class=\"item \">";
+					echo "<div class=\"row box-product\">";
+					
 					if(!$pro_result){
 						echo 'Error	';
 					}
 					else
 					{
+					$i=0;
+					for($i=0;$i<2;$i++)
+					{
+					//echo "here";
+					//product
+					echo "<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">";
+					echo "<div class=\"product-block\">";
+					
 					$pro_row = $pro_result->fetch_object();
 					echo "<div class=\"image\"> <a class=\"img\" href=\"product.php\"><img alt=\"product info\" src=\"$pro_row->imageurl\" title=\"product title\"></a> </div>";
 					echo "<div class=\"product-meta\">";
@@ -795,25 +764,35 @@
                         <button class=\"btn btn-default btn-compare pull-left\" data-toggle=\"tooltip\" title=\"Add to Compare\"> <i class=\"fa fa-retweet fa-fw\"></i> </button>
                         <button class=\"btn btn-default btn-wishlist pull-left\" data-toggle=\"tooltip\" title=\"Add to Wishlist\"> <i class=\"fa fa-heart fa-fw\"></i> </button>
                         <button class=\"btn btn-default btn-addtocart pull-left\" data-toggle=\"tooltip\" title=\"Add to Cart\"> <i class=\"fa fa-shopping-cart fa-fw\"></i> </button>
-                      </div>";
+                      </div>";//end for small-btns
 					  
-					echo "</div>";
+					echo "</div>";//product meta
 					echo "<div class=\"meta-back\"></div>";
-					}
+					echo "</div>";//product-block
+					echo "</div>";//col-lg-4
 					
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-				echo "</div>";
-				echo "</div>";
-			}
+					}//end of for loop
+					}//end of else
+					
+					echo "</div>";//row box-product
+					echo "</div>";//item active
+				
+				
+				}//$k end of for
+				$row = $result->fetch_object();
+				if(!$row)
+				 break;
+				echo "</div>";//carousel inner
+				echo "</div>";//box-products slide
+				echo "</div>";//box content
+				echo "</div>";//main column block
+				
+			}//end of for $j
+			
 				echo "</div>";
 				
 			echo "</div>";
-		}
+		}//end of while
 		
 	}
 	//echo "myvar: ".$myvar;

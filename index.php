@@ -232,13 +232,23 @@ Also notice how the destination page is given here, rather than in anything abov
 	<input type="submit" style="display:none;">
 </form>
 
+<form method=post name="prodform" action="productlist.php">
+	<input type="hidden" name="categoryType" value="">
+	<input type="hidden" name="category_id" value="">
+	<input type="hidden" name="subocc_id" value="">
+	<input type="hidden" name="subocc" value="">
+	<input type="submit" style="display:none;">
+</form>
+
 <!-- Menu Item for Tablets and Computers Only-->
 
 <li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='1'; document.myform.categoryType.value='Party';; document.myform.submit(); return false"> <i class="fa fa-glass"></i> <span>Party</span> <i class="fa fa-angle-right"></i> </a>
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
-            <li><a href="productlist.php">Birthday</a></li>
+            <li><a  href="#" onclick="document.prodform.category_id.value='1'; document.prodform.categoryType.value='Party';
+			document.prodform.subocc_id.value='1';
+			document.prodform.subocc.value='Birthday';; document.prodform.submit(); return false">Birthday</a></li>
             <li><a href="productlist.php">Farewell</a></li>
             <li><a href="productlist.php">Prom</a></li>
             <li><a href="productlist.php">Date</a></li>
@@ -258,7 +268,8 @@ Also notice how the destination page is given here, rather than in anything abov
 </li>
 <!-- end: Menu Item -->
 <!-- Menu Item -->
-<li> <a href="categorylist.php"> <i class="fa fa-star"></i> <span>Festivals</span> <i class="fa fa-angle-right"></i> </a>
+<li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='2'; document.myform.categoryType.value='Festivals';; document.myform.submit(); return false"> <i class="fa fa-star"></i> <span>Festivals</span> <i class="fa fa-angle-right"></i> </a>
+<!--<li> <a href="categorylist.php"> <i class="fa fa-star"></i> <span>Festivals</span> <i class="fa fa-angle-right"></i> </a>-->
     <div class="dropdown-menu">
         <!-- Sub Menu -->
         <div class="content">
@@ -316,7 +327,8 @@ Also notice how the destination page is given here, rather than in anything abov
 </li>
 <!-- end: Menu Item -->
 <!-- Menu Item -->
-<li class="hidden-xs"> <a href="categorylist.php"> <i class="fa fa-user"></i> <span>Formals</span> <i class="fa fa-angle-right"></i> </a>
+
+<li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='3'; document.myform.categoryType.value='Formals';; document.myform.submit(); return false"> <i class="fa fa-user"></i> <span>Formals</span> <i class="fa fa-angle-right"></i> </a>
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
@@ -331,51 +343,10 @@ Also notice how the destination page is given here, rather than in anything abov
         <!-- end: Sub Menu -->
     </div>
 </li>
-<!--<li> <a href="#a"> <i class="fa fa-female"></i> <span>Formals</span> <i class="fa fa-angle-right"></i> </a>
-  <div class="dropdown-menu">
-    &lt;!&ndash; Sub Menu &ndash;&gt;
-                <div class="content">
-                  <div class="row">
-                    <div class="col-md-5"> <a class="menu-title" href="#a">Fashion</a>
-                      <ul>
-                        <li><a href="#a">Clothing</a></li>
-                        <li><a href="#a">Shoes</a></li>
-                        <li><a href="#a">Handbags</a></li>
-                        <li><a href="#a">Accessories</a></li>
-                        <li><a href="#a">Luggage</a></li>
-                        <li><a href="#a">Jewelry</a></li>
-                      </ul>
-                    </div>
-                    &lt;!&ndash;<div class="col-md-7">
-                      <div class="product-block">
-                          <div class="image">
-                              <div class="product-label product-sale"><span>SALE</span></div>
-                              <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                          <div class="product-meta">
-                              <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                              <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                              <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                                  Cart</a> </div>
-                              <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                              <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                              <div class="small-btns">
-                                  <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                                  <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                                  <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                              </div>
-                          </div>
-                          <div class="meta-back"></div>
-                      </div>
-                  </div>&ndash;&gt;
-                  </div>
-                </div>
-                &lt;!&ndash; end: Sub Menu &ndash;&gt;
-              </div>
-            </li>-->
 <!-- end: Menu Item -->
 <!-- Menu Item -->
-<!--            <li> <a href="#a"> <i class="fa fa-mobile"></i> <span>Mobile Phones</span></a> </li>-->
-<li class="hidden-xs"> <a href="categorylist.php"> <i class="fa fa-trophy"></i> <span>Sports</span> <i class="fa fa-angle-right"></i> </a>
+
+<li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='5'; document.myform.categoryType.value='Sports';; document.myform.submit(); return false"> <i class="fa fa-trophy"></i> <span>Sports</span> <i class="fa fa-angle-right"></i> </a>
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
@@ -391,7 +362,7 @@ Also notice how the destination page is given here, rather than in anything abov
 <!-- end: Menu Item -->
 <!-- Menu Item -->
 <!--<li> <a href="#a"> <i class="fa fa-video-camera"></i> <span>Digital Camera</span></a> </li>-->
-<li class="hidden-xs"> <a href="categorylist.php"> <i class="fa fa-files-o"></i> <span>Casuals</span> <i class="fa fa-angle-right"></i> </a>
+<li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='4'; document.myform.categoryType.value='Casuals';; document.myform.submit(); return false"> <i class="fa fa-files-o"></i> <span>Casuals</span> <i class="fa fa-angle-right"></i> </a>
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
@@ -413,7 +384,7 @@ Also notice how the destination page is given here, rather than in anything abov
 <li> <a href="productlist.php"> <i class="fa fa-thumbs-up"></i> <span>Funky</span></a> </li>
 <!-- end: Menu Item -->
 <!-- Menu Item -->
-<li> <a href="categorylist.php"> <i class="fa fa-gift"></i> <span>Accessories</span></a> </li>
+<li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='6'; document.myform.categoryType.value='others';; document.myform.submit(); return false"> <i class="fa fa-gift"></i> <span>Accessories</span> <i class="fa fa-angle-right"></i> </a>
 <!-- end: Menu Item -->
 </ul>
 </div>
@@ -529,436 +500,7 @@ Also notice how the destination page is given here, rather than in anything abov
 </div>
 </header>
 <!-- end: Header -->
-<!-- Products -->
-<!--<div class="row clearfix f-space30"></div>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 main-column box-block">
-      <div class="box-heading"><span>Featured Products</span></div>
-      <div class="box-content">
-        <div class="box-products slide" id="productc1">
-          <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#productc1"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#productc1"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-          <div class="carousel-inner"> 
-            &lt;!&ndash; Items Row &ndash;&gt;
-            <div class="item active">
-              <div class="row box-product"> 
-                &lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                  <div class="product-block">
-                    <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Female Strips Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-new"><span>NEW</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-              </div>
-            </div>
-            &lt;!&ndash; end: Items Row &ndash;&gt;
-&lt;!&ndash; Items Row &ndash;&gt;
-            <div class="item">
-              <div class="row box-product"> 
-                &lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                  <div class="product-block">
-                    <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Female Strips Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-new"><span>NEW</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-              </div>
-            </div>
-            &lt;!&ndash; end: Items Row &ndash;&gt;
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 box-block sidebar">
-      <div class="box-heading"><span>Specials</span></div>
-      <div class="box-content">
-        <div class="box-products slide carousel-fade" id="productc2">
-          <ol class="carousel-indicators">
-            <li class="active" data-slide-to="0" data-target="#productc2"></li>
-            <li class="" data-slide-to="1" data-target="#productc2"></li>
-            <li class="" data-slide-to="2" data-target="#productc2"></li>
-          </ol>
-          <div class="carousel-inner"> 
-            &lt;!&ndash; item &ndash;&gt;
-            <div class="item active">
-              <div class="product-block">
-                <div class="image">
-                  <div class="product-label product-hot"><span>HOT</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                <div class="product-meta">
-                  <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                    Cart</a> </div>
-                </div>
-                <div class="meta-back"></div>
-              </div>
-            </div>
-            &lt;!&ndash; end: item &ndash;&gt;
-&lt;!&ndash; item &ndash;&gt;
-            <div class="item">
-              <div class="product-block">
-                <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-                <div class="product-meta">
-                  <div class="name"><a href="product.html">Strips Stylish Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>654.87</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                    Cart</a> </div>
-                </div>
-                <div class="meta-back"></div>
-              </div>
-            </div>
-            &lt;!&ndash; end: item &ndash;&gt;
-&lt;!&ndash; item &ndash;&gt;
-            <div class="item">
-              <div class="product-block">
-                <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-                <div class="product-meta">
-                  <div class="name"><a href="product.html">Blue Stylish Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>1600</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                    Cart</a> </div>
-                </div>
-                <div class="meta-back"></div>
-              </div>
-            </div>
-            &lt;!&ndash; end: item &ndash;&gt;
-          </div>
-        </div>
-        <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#productc2"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#productc2"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-        <div class="nav-bg"></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row clearfix f-space30"></div>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-column box-block">
-      <div class="box-heading"><span>Recent Products</span></div>
-      <div class="box-content">
-        <div class="box-products slide" id="productc3">
-          <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#productc3"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#productc3"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-          <div class="carousel-inner"> 
-            &lt;!&ndash; Items Row &ndash;&gt;
-            <div class="item active">
-              <div class="row box-product"> 
-                &lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Female Strips Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-new"><span>NEW</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-              </div>
-            </div>
-            &lt;!&ndash; end: Items Row &ndash;&gt;
-&lt;!&ndash; Items Row &ndash;&gt;
-            <div class="item">
-              <div class="row box-product"> 
-                &lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Female Strips Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>520</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-new"><span>NEW</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Blue Fashion Bag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>320</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-&lt;!&ndash; Product &ndash;&gt;
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="product-block">
-                    <div class="image">
-                      <div class="product-label product-sale"><span>SALE</span></div>
-                      <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                    <div class="product-meta">
-                      <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                      <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                        Cart</a> </div>
-                      <div class="small-price"> <span class="price-new"><span class="sym">$</span>96</span> <span class="price-old"><span class="sym">$</span>119.50</span> </div>
-                      <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
-                      <div class="small-btns">
-                        <button class="btn btn-default btn-compare pull-left" data-toggle="tooltip" title="Add to Compare"> <i class="fa fa-retweet fa-fw"></i> </button>
-                        <button class="btn btn-default btn-wishlist pull-left" data-toggle="tooltip" title="Add to Wishlist"> <i class="fa fa-heart fa-fw"></i> </button>
-                        <button class="btn btn-default btn-addtocart pull-left" data-toggle="tooltip" title="Add to Cart"> <i class="fa fa-shopping-cart fa-fw"></i> </button>
-                      </div>
-                    </div>
-                    <div class="meta-back"></div>
-                  </div>
-                </div>
-                &lt;!&ndash; end: Product &ndash;&gt;
-              </div>
-            </div>
-            &lt;!&ndash; end: Items Row &ndash;&gt;
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->
-<!-- end: Products -->
+
 <!-- Rectangle Banners -->
 <div class="row clearfix f-space30"></div>
 <div class="container">
@@ -1014,209 +556,7 @@ Also notice how the destination page is given here, rather than in anything abov
     </div>
 </div>
 <!-- end: Rectangle Banners -->
-<!-- Widgets -->
-<!--<div class="row clearfix f-space30"></div>
-<div class="container">
-  <div class="row"> 
-    &lt;!&ndash; Sidebar &ndash;&gt;
-    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 box-block sidebar">
-      <div class="box-heading"><span>Best Seller</span></div>
-      &lt;!&ndash; Best Sellers Products &ndash;&gt;
-      <div class="box-content">
-        <div class="box-products slide carousel-fade" id="productc4">
-          <ol class="carousel-indicators">
-            <li class="active" data-slide-to="0" data-target="#productc4"></li>
-            <li class="" data-slide-to="1" data-target="#productc4"></li>
-            <li class="" data-slide-to="2" data-target="#productc4"></li>
-          </ol>
-          <div class="carousel-inner"> 
-            &lt;!&ndash; item &ndash;&gt;
-            <div class="item active">
-              <div class="product-block">
-                <div class="image">
-                  <div class="product-label product-hot"><span>HOT</span></div>
-                  <a class="img" href="product.html"><img alt="product info" src="images/products/product1.jpg" title="product title"></a> </div>
-                <div class="product-meta">
-                  <div class="name"><a href="product.html">Ladies Stylish Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>96</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                    Cart</a> </div>
-                </div>
-                <div class="meta-back"></div>
-              </div>
-            </div>
-            &lt;!&ndash; end: item &ndash;&gt;
-&lt;!&ndash; item &ndash;&gt;
-            <div class="item">
-              <div class="product-block">
-                <div class="image"> <a class="img" href="product.html"><img alt="product info" src="images/products/product2.jpg" title="product title"></a> </div>
-                <div class="product-meta">
-                  <div class="name"><a href="product.html">Strips Stylish Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>654.87</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                    Cart</a> </div>
-                </div>
-                <div class="meta-back"></div>
-              </div>
-            </div>
-            &lt;!&ndash; end: item &ndash;&gt;
-&lt;!&ndash; item &ndash;&gt;
-            <div class="item">
-              <div class="product-block">
-                <div class="image"> <a class="img" href="product.html"> <img alt="product info" src="images/products/product3.jpg" title="product title"></a> </div>
-                <div class="product-meta">
-                  <div class="name"><a href="product.html">Females Stylish Handbag</a></div>
-                  <div class="big-price"> <span class="price-new"><span class="sym">$</span>1600</span> </div>
-                  <div class="big-btns"> <a class="btn btn-default btn-view pull-left" href="#">View</a> <a class="btn btn-default btn-addtocart pull-right" href="#">Add to
-                    Cart</a> </div>
-                </div>
-                <div class="meta-back"></div>
-              </div>
-            </div>
-            &lt;!&ndash; end: item &ndash;&gt;
-          </div>
-        </div>
-        <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#productc4"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#productc4"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-        <div class="nav-bg"></div>
-      </div>
-      &lt;!&ndash; end: Best Sellers Products &ndash;&gt;
-      <div class="row clearfix f-space10"></div>
-      &lt;!&ndash; Get Updates Box &ndash;&gt;
-      <div class="box-content">
-        <div class="subscribe">
-          <div class="heading">
-            <h3>Get updates</h3>
-          </div>
-          <div class="formbox">
-            <form>
-              <i class="fa fa-envelope fa-fw"></i>
-              <input class="form-control" id="InputUserEmail" placeholder="Your e-mail..." type="text">
-              <button class="btn color1 normal pull-right" type="submit">Sign
-              up</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      &lt;!&ndash; end: Get Updates Box &ndash;&gt;
-    </div>
-    &lt;!&ndash; end: Sidebar &ndash;&gt;
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-      <div class="row">
-        <div class="col-md-8 blog-block"> 
-          &lt;!&ndash; Blog widget Box &ndash;&gt;
-          <div class="box-content slide carousel-fade" id="blogslide">
-            <div class="carousel-inner"> 
-              &lt;!&ndash; Post &ndash;&gt;
-              <div class="blog-entry item">
-                <div class="image"> <span class="blogico"> <i class="fa fa-bullhorn fa-fw"></i><br>
-                  Blog entry</span> <img class="ani-image" src="images/blog-4.jpg" alt="image info"> </div>
-                <div class="entry-row">
-                  <div class="date col-xs-12"><span>12</span><span>Aug 2013</span></div>
-                  <div class="blog-text"> <span>A decent blog title goes here...</span> <span>Appropriately supply high-quality intellectual capital after
-                    client-centered quality vectors. Collaboratively orchestrate end-to-end
-                    strategic theme areas after...</span> <span> <a href="#a"> <i class="fa fa-user fa-fw"></i>John Doe</a> <a href="#a"> <i class="fa fa-comments fa-fw"></i>4 Comments</a> </span> </div>
-                </div>
-              </div>
-              &lt;!&ndash;END Post &ndash;&gt;
-&lt;!&ndash; Post &ndash;&gt;
-              <div class="blog-entry item">
-                <div class="image"> <span class="blogico"> <i class="fa fa-bullhorn fa-fw"></i><br>
-                  Blog entry</span> <img class="ani-image" src="images/blog-1.jpg" alt=""> </div>
-                <div class="entry-row">
-                  <div class="date col-xs-12"><span>27</span><span>Oct 2013</span></div>
-                  <div class="blog-text"> <span>Nulla quis lorem ut libero malesuada...</span> <span>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec
-                    rutrum congue leo eget malesuada. Nulla quis lorem ut libero malesuada
-                    feugiat. Curabitur arcu erat, accumsan id imperdiet....</span> <span> <a href="#a"> <i class="fa fa-user fa-fw"></i>John Doe</a> <a href="#a"> <i class="fa fa-comments fa-fw"></i>2 Comments</a> </span> </div>
-                </div>
-              </div>
-              &lt;!&ndash;END Post &ndash;&gt;
-&lt;!&ndash; Post &ndash;&gt;
-              <div class="blog-entry item active">
-                <div class="image"> <span class="blogico"> <i class="fa fa-bullhorn fa-fw"></i><br>
-                  Blog entry</span> <img class="ani-image" src="images/blog-2.jpg" alt=""> </div>
-                <div class="entry-row">
-                  <div class="date col-xs-12"><span>05</span><span>Feb 2013</span></div>
-                  <div class="blog-text"> <span>Convallis a pellentesque nec, egestas...</span> <span>Praesent sapien massa, convallis a pellentesque nec, egestas non
-                    nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at
-                    tellus. Sed porttitor lectus nibh....</span> <span> <a href="#a"> <i class="fa fa-user fa-fw"></i>John Doe</a> <a href="#a"> <i class="fa fa-comments fa-fw"></i>14 Comments</a> </span> </div>
-                </div>
-              </div>
-              &lt;!&ndash;END Post &ndash;&gt;
-&lt;!&ndash; Post &ndash;&gt;
-              <div class="blog-entry item">
-                <div class="image"> <span class="blogico"> <i class="fa fa-bullhorn fa-fw"></i><br>
-                  Blog entry</span> <img class="ani-image" src="images/blog-3.jpg" alt=""> </div>
-                <div class="entry-row">
-                  <div class="date col-xs-12"><span>11</span><span>Jan 2013</span></div>
-                  <div class="blog-text"><span>Dynamically empower equity...</span> <span>Completely cultivate standardized internal or "organic" sources
-                    with unique total linkage. Dynamically empower equity invested e-markets
-                    without premier schemas....</span> <span> <a href="#a"> <i class="fa fa-user fa-fw"></i>John Doe</a> <a href="#a"> <i class="fa fa-comments fa-fw"></i>19 Comments</a> </span> </div>
-                </div>
-              </div>
-              &lt;!&ndash;END Post &ndash;&gt;
-            </div>
-            <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#blogslide"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#blogslide"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-          </div>
-          &lt;!&ndash; end: Blog widget Box &ndash;&gt;
-          <div class="f-space10"></div>
-        </div>
-        <div class="col-md-4 twitter-block"> 
-          &lt;!&ndash; twitter widget box &ndash;&gt;
-          <div class="box-content">
-            <div class="twitter-box"> <i class="fa fa-twitter fa-fw"></i>
-              <div class="title">Latest Tweets</div>
-              <div class="carousel-fade slide" id="tweets">
-                <div class="carousel-inner"> 
-                  &lt;!&ndash; tweet &ndash;&gt;
-                  <div class="tweet item active"><span>RT: <em>@Interactively</em> implement unique e-business with dynamic benefits. Authoritatively target
-                    sustainable paradigms before strategic architectures. <b> http://goo.gl/4N8JN </b>- <em>@flatro</em> <br>
-                    <br>
-                    about 8 hours ago</span></div>
-                  &lt;!&ndash; end: tweet &ndash;&gt;
-&lt;!&ndash; tweet &ndash;&gt;
-                  <div class="tweet item"><span>RT: <em>@Architectures</em> paradigms before strategic architectures implement unique e-business with
-                    dynamic benefits. Authoritatively target sustainable. <b> http://goo.gl/4N8JN </b>- <em>@flatro</em> <br>
-                    <br>
-                    about 2 hours ago</span></div>
-                  &lt;!&ndash; end: tweet &ndash;&gt;
-                </div>
-              </div>
-            </div>
-          </div>
-          &lt;!&ndash; end: twitter widget box &ndash;&gt;
-          <div class="f-space10"></div>
-        </div>
-      </div>
-      <div class="row"> 
-        &lt;!&ndash; Brands &ndash;&gt;
-        <div class="col-md-12 main-column box-block brands-block">
-          <div class="box-heading"><span>Populer Brands</span></div>
-          <div class="box-content">
-            <div class="box-products box-brands slide" id="brands">
-              <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#brands"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#brands"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>
-              <div class="carousel-inner">
-                <div class="brands-row item active">
-                  <div class="brand-logo"><a href="#a"><img src="images/brands/logo1.png" alt=""></a></div>
-                  <div class="brand-logo"><a href="#a"><img src="images/brands/logo2.png" alt=""></a></div>
-                  <div class="brand-logo"><a href="#a"><img src="images/brands/logo3.png" alt=""></a></div>
-                  <div class="brand-logo"><a href="#a"><img src="images/brands/logo1.png" alt=""></a></div>
-                </div>
-                <div class="brands-row item">
-                  <div class="brand-logo"><a href="#a"><img src="images/brands/logo3.png" alt=""></a></div>
-                  <div class="brand-logo"><a href="#a"><img src="images/brands/logo2.png" alt=""></a></div>
-                  <div class="brand-logo"><a href="#a"><img src="images/brands/logo1.png" alt=""></a></div>
-                  <div class="brand-logo"><a href="#a"><img src="images/brands/logo3.png" alt=""></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      &lt;!&ndash; end: Brands &ndash;&gt;
-    </div>
-  </div>
-</div>-->
-<!-- end: Widgets -->
+
 <div class="row clearfix f-space30"></div>
 <!-- footer -->
 <footer class="footer">

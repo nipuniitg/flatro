@@ -117,30 +117,7 @@
                             </form>
                         </div>
                     </li>
-                    <!-- this hidden field is used to contain the selected option from the dropdown -->
-                    <!--<input class="dropdown-field" type="hidden" value="All Categories"/>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#a">All Categories<i class="fa fa-angle-down fa-fw"></i> </a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#a">Party</a></li>
-                        <li><a href="#a">Festivals</a></li>
-                        <li><a href="#a">Formals</a></li>
-                        <li><a href="#a">Sports</a></li>
-                        <li><a href="#a">Casuals</a></li>
-                        <li><a href="#a">Trendy</a></li>
-                        <li><a href="#a">Funky</a></li>
-                        <li><a href="#a">Accessories</a></li>
-
-                      </ul>
-                    </li>
-                    <li>
-
-                  &lt;!&ndash;<form action="#">
-            
-              <input class="searchinput" id="search" placeholder="Search..." type="search">
-              <button class="fa fa-search fa-fw" type="submit"></button>
-          </form>&ndash;&gt;
-      
-			</li>-->
+                   
 
                 </ul>
 
@@ -154,14 +131,22 @@
                                     <!-- this hidden field is used to contain the selected option from the dropdown -->
                                     <input class="dropdown-field" type="hidden" value="All Categories"/>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="productlist.php" data-value="Party">Party</a></li>
-                                        <li><a href="productlist.php" data-value="Festivals">Festivals</a></li>
-                                        <li><a href="productlist.php" data-value="Formals">Formals</a></li>
-                                        <li><a href="productlist.php" data-value="Sports">Sports</a></li>
-                                        <li><a href="productlist.php" data-value="Casuals">Casuals</a></li>
-                                        <li><a href="productlist.php" data-value="Trendy">Trendy</a></li>
-                                        <li><a href="productlist.php" data-value="Accessories">Accessories</a></li>
-                                        <li><a href="productlist.php" data-value="All Categories">All Categories</a></li>
+									<?php
+									require('includes/configure.php');
+									$query_str = "SELECT category,id FROM level0";
+									$result = mysqli_query($con,$query_str);
+									if(!$result){
+									echo 'Error	1';
+									}
+									else{
+										while($row=$result->fetch_object())
+										{
+											echo "<li>";
+											echo "<a  href=\"#\" onclick=\"document.myform.formVar.value='$row->id'; document.myform.categoryType.value='$row->category';; document.myform.submit(); return false\"> $row->category</a>";
+											echo "</li>";
+										}
+									}
+									?>
                                     </ul>
                                 </li>
                             </ul>
@@ -241,27 +226,32 @@ Also notice how the destination page is given here, rather than in anything abov
 </form>
 
 <!-- Menu Item for Tablets and Computers Only-->
-
+<?php 
+require('includes/configure.php');
+?>
 <li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='1'; document.myform.categoryType.value='Party';; document.myform.submit(); return false"> <i class="fa fa-glass"></i> <span>Party</span> <i class="fa fa-angle-right"></i> </a>
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
-            <li><a  href="#" onclick="document.prodform.category_id.value='1'; document.prodform.categoryType.value='Party';
-			document.prodform.subocc_id.value='1';
-			document.prodform.subocc.value='Birthday';; document.prodform.submit(); return false">Birthday</a></li>
-            <li><a href="productlist.php">Farewell</a></li>
-            <li><a href="productlist.php">Prom</a></li>
-            <li><a href="productlist.php">Date</a></li>
-            <li> <a href="productlist.php"><span>Weddding</span> <i class="fa fa-caret-right"></i> </a>
-                <ul class="dropdown-menu sub flyout-menu">
-                    <li><a href="productlist.php">Host</a></li>
-                    <li><a href="productlist.php">Attendee</a></li>
-                    <!--<li><a href="product.html">Product Page</a> </li>-->
-                </ul>
-            </li>
-            <li><a href="productlist.php">College Fests</a></li>
-            <li><a href="productlist.php">Dinner</a></li>
-            <li><a href="productlist.php">Halloween</a></li>
+			<?php 
+			$query_str = "SELECT subcategory,id FROM level1 where category='1'";
+			$result = mysqli_query($con,$query_str);
+			if(!$result){
+				echo 'Error	1';
+			}
+			else
+			{
+				while($row = $result->fetch_object())
+				{
+				 echo "<li>";
+				 echo "<a href=\"#\" onclick=\"document.prodform.category_id.value='1'; document.prodform.categoryType.value='Party';
+			document.prodform.subocc_id.value='$row->id';
+			document.prodform.subocc.value='$row->subcategory';; document.prodform.submit(); return false\">$row->subcategory</a> ";
+				 echo "</li>";
+				}
+			}
+			?>
+
         </ul>
         <!-- end: Sub Menu -->
     </div>
@@ -332,13 +322,24 @@ Also notice how the destination page is given here, rather than in anything abov
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
-            <li><a href="productlist.php">Interviews</a></li>
-            <li><a href="productlist.php">Office Wear</a></li>
-            <li><a href="productlist.php">Presentations</a></li>
-            <li><a href="productlist.php">Business Meetings</a></li>
-            <li><a href="productlist.php">Graduation</a></li>
-            <li><a href="productlist.php">Reunion</a></li>
-            <!--<li><a href="contact.html">Halloween</a></li>-->
+		<?php 
+			$query_str = "SELECT subcategory,id FROM level1 where category='3'";
+			$result = mysqli_query($con,$query_str);
+			if(!$result){
+				echo 'Error	1';
+			}
+			else
+			{
+				while($row = $result->fetch_object())
+				{
+				 echo "<li>";
+				 echo "<a href=\"#\" onclick=\"document.prodform.category_id.value='3'; document.prodform.categoryType.value='Formals';
+			document.prodform.subocc_id.value='$row->id';
+			document.prodform.subocc.value='$row->subcategory';; document.prodform.submit(); return false\">$row->subcategory</a> ";
+				 echo "</li>";
+				}
+			}
+		?>
         </ul>
         <!-- end: Sub Menu -->
     </div>
@@ -350,11 +351,24 @@ Also notice how the destination page is given here, rather than in anything abov
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
-            <li><a href="productlist.php">Football</a></li>
-            <li><a href="productlist.php">Cricket</a></li>
-            <li><a href="productlist.php">Basket Ball</a></li>
-            <li><a href="productlist.php">Badminton</a></li>
-            <li><a href="productlist.php">Tennis</a></li>
+            <?php 
+			$query_str = "SELECT subcategory,id FROM level1 where category='5'";
+			$result = mysqli_query($con,$query_str);
+			if(!$result){
+				echo 'Error	1';
+			}
+			else
+			{
+				while($row = $result->fetch_object())
+				{
+				 echo "<li>";
+				 echo "<a href=\"#\" onclick=\"document.prodform.category_id.value='5'; document.prodform.categoryType.value='Sports';
+			document.prodform.subocc_id.value='$row->id';
+			document.prodform.subocc.value='$row->subcategory';; document.prodform.submit(); return false\">$row->subcategory</a> ";
+				 echo "</li>";
+				}
+			}
+			?>
         </ul>
         <!-- end: Sub Menu -->
     </div>
@@ -366,10 +380,24 @@ Also notice how the destination page is given here, rather than in anything abov
     <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
         <ul>
-            <li><a href="productlist.php">Summer</a></li>
-            <li><a href="productlist.php">Winter</a></li>
-            <li><a href="productlist.php">Rainy</a></li>
-            <li><a href="productlist.php">Nightware</a></li>
+            <?php 
+			$query_str = "SELECT subcategory,id FROM level1 where category='4'";
+			$result = mysqli_query($con,$query_str);
+			if(!$result){
+				echo 'Error	1';
+			}
+			else
+			{
+				while($row = $result->fetch_object())
+				{
+				 echo "<li>";
+				 echo "<a href=\"#\" onclick=\"document.prodform.category_id.value='4'; document.prodform.categoryType.value='Casuals';
+			document.prodform.subocc_id.value='$row->id';
+			document.prodform.subocc.value='$row->subcategory';; document.prodform.submit(); return false\">$row->subcategory</a> ";
+				 echo "</li>";
+				}
+			}
+			?>
 
         </ul>
         <!-- end: Sub Menu -->
@@ -384,7 +412,7 @@ Also notice how the destination page is given here, rather than in anything abov
 <li> <a href="productlist.php"> <i class="fa fa-thumbs-up"></i> <span>Funky</span></a> </li>
 <!-- end: Menu Item -->
 <!-- Menu Item -->
-<li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='6'; document.myform.categoryType.value='others';; document.myform.submit(); return false"> <i class="fa fa-gift"></i> <span>Accessories</span> <i class="fa fa-angle-right"></i> </a>
+<li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='6'; document.myform.categoryType.value='others';; document.myform.submit(); return false"> <i class="fa fa-gift"></i> <span>Accessories</span> </a>
 <!-- end: Menu Item -->
 </ul>
 </div>

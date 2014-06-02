@@ -490,18 +490,32 @@
 ?>
 
   <script>
-      var start_image = 1;  // start number of image in div
+      var start_image = 0;  // start number of image in div
       var count_images = "<?php echo $limitpage; ?>";    // number of images to be loaded on hitting load more images button
+      var sortvalue = 1;
+      var minprice = 0;
+      var maxprice = 1000000;
+      var subocc_id = "<?php echo $subocc_id; ?>";
+      var occ = "<?php echo $occ; ?>";
+      function clearprice(){
+          document.getElementById("minprice").value = "";
+          document.getElementById("maxprice").value = "";
+      }
+      function loadimages( sortby ){
 
-      function loadimages( pagenum ){
-
-
+            sortby = sortvalue;
+            /*
+            sortby
+            1 -> Price low-high
+            2 -> Price High-low
+            3 -> Rating Highest
+            4 -> Rating Lowest
+            5 -> Recent
+             */
           //alert("No errors?");
-            start_image = start_image + count_images;
-          var subocc_id = "<?php echo $subocc_id; ?>";
-          var occ = "<?php echo $occ; ?>";
 
-          //alert(subocc_id);
+            start_image = parseInt(start_image) + parseInt(count_images);
+
           if (window.XMLHttpRequest) {
               // code for IE7+, Firefox, Chrome, Opera, Safari
               xmlhttp=new XMLHttpRequest();
@@ -510,33 +524,63 @@
           }
           xmlhttp.onreadystatechange=function() {
               if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                  /*if(xmlhttp.responseText == "No More Images")
-                  {
-                        document.getElementById("loadmore").innerHTML = "No More Images";
-                  }else{*/
-                      document.getElementById("boxproducts").innerHTML= document.getElementById("boxproducts").innerHTML + xmlhttp.responseText;
-                  //}
 
+                  document.getElementById("boxproducts").innerHTML= document.getElementById("boxproducts").innerHTML + xmlhttp.responseText;
+/*
+                  var moreprods = 1;
+                  if(document.getElementById("moreprods"))
+                  {
+                      moreprods = document.getElementById("moreprods").value;
+                      alert(document.getElementById("moreprods").value);
+                      alert(xmlhttp.responseText);
+                  }
+                    // removing the Load More Images button if there are no more images
+                  if(moreprods != 1)
+                  {
+                      //alert("hello");
+                      document.getElementById("loadmore").innerHTML = "<label class=\"centered-text\">No More Images</label>";
+                  }
+*/
 
               }
 
           }
           //alert(pagenum);
-          xmlhttp.open("GET","prodlistajax.php?occ="+occ+"&subocc_id="+subocc_id+"&startnum="+start_image+"&limit="+count_images,true);
+          var qno = 1;
+          xmlhttp.open("GET","prodlistajax.php?qno="+qno+"&occ="+occ+"&subocc_id="+subocc_id+"&startnum="+start_image+"&limit="+count_images+"&sortby="+sortby+"&minprice="+minprice+"&maxprice="+maxprice,true);
           //alert("opened");
           xmlhttp.send();
 
 
       }
 
-      /*
-      function getpage( pagenum ){
-            //alert("No errors?");
+      function filterprods(){
+          if(document.getElementById("minprice").value != "")
+          {
+              minprice = document.getElementById("minprice").value;
+          }
+          if(document.getElementById("maxprice").value != "")
+          {
+              maxprice = document.getElementById("maxprice").value;
+          }
+           orderby(sortvalue);
+      }
 
-          var subocc_id = "<?php //echo $subocc_id; ?>";
-          var occ = "<?php //echo $occ; ?>";
-
-          //alert(subocc_id);
+      function orderby( sortby ){
+          /*
+           sortby
+           1 -> Price low-high
+           2 -> Price High-low
+           3 -> Rating Highest
+           4 -> Rating Lowest
+           5 -> Recent
+           */
+          sortvalue = sortby;
+         // var cur_start_img = 1;
+         // var cur_count_images = parseInt(start_image) + parseInt(count_images) - 1;
+          start_image = 0;
+          var cur_start_img = start_image;
+          var cur_count_images = count_images;
           if (window.XMLHttpRequest) {
               // code for IE7+, Firefox, Chrome, Opera, Safari
               xmlhttp=new XMLHttpRequest();
@@ -545,45 +589,22 @@
           }
           xmlhttp.onreadystatechange=function() {
               if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                  document.getElementById("boxproducts").innerHTML=xmlhttp.responseText;
+
+                  document.getElementById("boxproducts").innerHTML= xmlhttp.responseText;
 
               }
 
           }
-            //alert(pagenum);
-          xmlhttp.open("GET","prodlistajax.php?q="+2+"&occ="+occ+"&subocc_id="+subocc_id+"&pagenum="+pagenum+"&limit="+prodnum,true);
+          //alert(pagenum);
+          var qno = 1;
+          xmlhttp.open("GET","prodlistajax.php?qno="+qno+"&occ="+occ+"&subocc_id="+subocc_id+"&startnum="+cur_start_img+"&limit="+cur_count_images+"&sortby="+sortby+"&minprice="+minprice+"&maxprice="+maxprice,true);
           //alert("opened");
           xmlhttp.send();
 
 
       }
-      */
-/*
-      function limitprods( prodnum ){
-
-       var subocc_id = "<?php //echo $subocc_id; ?>";
-       var occ = "<?php //echo $occ; ?>";
-        //alert(subocc_id);
-          if (window.XMLHttpRequest) {
-              // code for IE7+, Firefox, Chrome, Opera, Safari
-              xmlhttp=new XMLHttpRequest();
-          } else { // code for IE6, IE5
-              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange=function() {
-              if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                  document.getElementById("boxproducts").innerHTML=xmlhttp.responseText;
-
-              }
-
-          }
-
-         xmlhttp.open("GET","prodlistajax.php?q="+1+"&occ="+occ+"&subocc_id="+subocc_id+"&limit="+prodnum,true);
-         xmlhttp.send();
 
 
-     }
-     */
   </script>
 
 <?php
@@ -606,13 +627,13 @@
                   </li>-->
                   <li class=\"dropdown\"> <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" data-hover=\"dropdown\" href=\"#a\"> Sort by <i class=\"fa fa-sort fa-fw\"></i> </a>
                       <ul class=\"dropdown-menu\" role=\"menu\">
-                          <li><a href=\"#a\">Name (A-Z)</a></li>
-                          <li><a href=\"#a\">Name (Z-A)</a></li>
-                          <li><a href=\"#a\">Price (Low-High)</a></li>
-                          <li><a href=\"#a\">Price (High-Low)</a></li>
-                          <li><a href=\"#a\">Rating Highest</a></li>
-                          <li><a href=\"#a\">Rating Lowest</a></li>
-                          <li><a href=\"#a\">Recent</a></li>
+                          <li><a href=\"#a\" onclick=\"orderby(1)\">Price (Low-High)</a></li>
+                          <li><a href=\"#a\" onclick=\"orderby(2)\">Price (High-Low)</a></li>
+                          <li><a href=\"#a\" onclick=\"orderby(3)\">Rating Highest</a></li>
+                          <li><a href=\"#a\" onclick=\"orderby(4)\">Rating Lowest</a></li>
+                          <li><a href=\"#a\" onclick=\"orderby(5)\">Recent</a></li>
+                          <!--<li><a href=\"#a\">Name (A-Z)</a></li>
+                          <li><a href=\"#a\">Name (Z-A)</a></li>-->
                       </ul>
                   </li>
                   <!--<li class=\"view-list\"> <a href=\"category-list.html\"> <i class=\"fa fa-list-ul fa-fw\"></i></a> </li>
@@ -787,7 +808,7 @@
 
   <!-- end: Products Row -->
 
-  <div id="loadmore">
+  <div id="loadmore" class="span12 pagination-centered">
       <button type="button" onclick="loadimages();" class="btn btn-default btn-lg btn-block center-block">
           Load More Images
       </button>
@@ -817,28 +838,65 @@
       <div class="box-heading"><span>Shop by</span></div>
       <!-- Filter by -->
       <div class="box-content">
-          <div class="shopby"> <span>Color</span>
+          <div class="shopby">
+              <span>Color</span>
               <div class="colors"> <a href="#a" data-toggle="tooltip" title="Orange (20)" class="color bg-orange"></a> <a href="#a" data-toggle="tooltip" title="Fuchsia (03)" class="color bg-fuchsia"></a> <a href="#a" data-toggle="tooltip" title="Blue (12)" class="color bg-blue"></a> <a href="#a" data-toggle="tooltip" title="Gray (20)" class="color bg-gray"></a> <a href="#a" data-toggle="tooltip" title="Coral (10)" class="color bg-coral"></a> <a href="#a" data-toggle="tooltip" title="Khaki (33)" class="color bg-khaki"></a> <a href="#a" data-toggle="tooltip" title="Green (20)" class="color bg-green"></a> <a href="#a" data-toggle="tooltip" title="Purple (20)" class="color bg-purple"></a> <a href="#a" data-toggle="tooltip" title="Salmon (44)" class="color bg-salmon"></a> <a href="#a" data-toggle="tooltip" title="Cyan (21)" class="color bg-cyan"></a> <a href="#a" data-toggle="tooltip" title="Gold (11)" class="color bg-gold"></a> <a href="#a" data-toggle="tooltip" title="Teal (30)" class="color bg-teal"></a> <a href="#a" data-toggle="tooltip" title="White (33)" class="color bg-white"></a> <a href="#a" data-toggle="tooltip" title="Black (18)" class="color bg-black"></a> </div>
               <hr>
 
               <!-- Price Range -->
               <span>Price range</span>
               <div class="pricerange">
-                  <input type="text" id="price-range" name="price-range"/>
-                  <!-- 	data-from="30"                      // overwrite default FROM setting
-      data-to="70"                        // overwrite default TO setting
-      data-type="double"                  // slider type
-      data-step="10"                      // slider step
-      data-postfix=" pounds"              // postfix text
-      data-hasgrid="true"                 // enable grid
-      data-hideminmax="true"              // hide Min and Max fields
-      data-hidefromto="true"              // hide From and To fields
-      data-prettify="false"               // don't use spaces in large numbers, eg. 10000 than 10 000
-       -->
 
-                  <button class="btn color1 normal pull-right" type="submit">Clear</button>
+                      <input class="form-control" id="minprice" placeholder="Min Price (INR)" type="number">
+                      to
+                      <input class="form-control" id="maxprice" placeholder="Max Price (INR)" type="number">
+                      <button class="btn color1 normal pull-left" type="button" onclick="filterprods();"> Filter </button>
+
+             <!-- <span class="irs" id="irs-1"><span class="irs"><span class="irs-line"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="display: none;">100</span><span class="irs-max" style="display: block;">1000</span><span class="irs-from" style="left: 20.11px; display: block;">200</span><span class="irs-to" style="left: 112.55px; display: block;">600</span><span class="irs-single" style="left: 46.83px; display: none;">200 — 600</span><span class="irs-diapason" style="left: 35.11px; width: 92.44px;"></span><span class="irs-slider from last" style="left: 23px;"></span><span class="irs-slider to" style="left: 116px;"></span></span><span class="irs-grid"></span></span><input name="price-range" id="price-range" style="display: none;" type="text" value="200;600">-->
+                      <!-- 	data-from="30"                      // overwrite default FROM setting
+          data-to="70"                        // overwrite default TO setting
+          data-type="double"                  // slider type
+          data-step="10"                      // slider step
+          data-postfix=" pounds"              // postfix text
+          data-hasgrid="true"                 // enable grid
+          data-hideminmax="true"              // hide Min and Max fields
+          data-hidefromto="true"              // hide From and To fields
+          data-prettify="false"               // don't use spaces in large numbers, eg. 10000 than 10 000
+           -->
+
+                      <button class="btn color1 normal pull-right" type="button" onclick="clearprice();">Clear</button>
+
               </div>
               <!--end: Price Range -->
+              <div class="clearfix f-space10"></div>
+              <hr>
+              <!-- Brand filter -->
+              <span> Brands</span>
+              <div class="panel panel-default" id="brand">
+                  <ul>
+                      <?php
+                      $brand_q = "SELECT productBrand, count(*) as count FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) group by productBrand";
+                       //$query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) limit $limitpage";
+                        //echo $query_str;
+                      $result = mysqli_query($con,$brand_q);
+                      if(!$result){
+                           echo 'Error	3';
+                      }
+                      else{
+                          while($row = $result->fetch_object())
+                          {
+                              echo "<div class=\"checkbox\"> <label> <input type=\"checkbox\" value=\"$row->productBrand\" class=\"chk\" name=\"$row->productBrand\"> $row->productBrand ($row->count)</label> </div>";
+
+                          }
+                      }
+
+                      ?>
+                      <!--
+                      <div class="checkbox"> <label> <input type="checkbox" value="tommy" class="chk" name="tommy"> Tommy </label> </div>
+                      <div class="checkbox"> <label> <input type="checkbox" value="tommy" class="chk" name="tommy"> Tommy Hilfigher</label> </div>
+                        -->
+                  </ul>
+              </div>
           </div>
       </div>
       <!-- end: Filter by -->
@@ -850,75 +908,82 @@
           <div class="panel-group" id="blogcategories">
               <div class="panel panel-default">
                   <div class="panel-heading closed" data-parent="#blogcategories" data-target="#collapseOne" data-toggle="collapse">
-                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-plus"></span> Men Wear </a><span class="categorycount">14</span> </h4>
+                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-plus"></span> Party </a><span class="categorycount">14</span> </h4>
                   </div>
                   <div class="panel-collapse collapse" id="collapseOne">
                       <div class="panel-body">
                           <ul>
-                              <li class="item"> <a href="#a">Jeans</a></li>
-                              <li class="item"> <a href="#a">Shirts</a></li>
-                              <li class="item"> <a href="#a">Shoes</a></li>
-                              <li class="item"> <a href="#a">Sports Wear</a></li>
+                              <li class="item"> <a href="#a">Birthday</a></li>
+                              <li class="item"> <a href="#a">Farewell</a></li>
+                              <li class="item"> <a href="#a">Prom</a></li>
+                              <li class="item"> <a href="#a">Wedding</a></li>
+                              <li class="item"> <a href="#a">College Fests</a></li>
+                              <li class="item"> <a href="#a">Dinner</a></li>
                           </ul>
                       </div>
                   </div>
               </div>
               <div class="panel panel-default">
                   <div class="panel-heading opened" data-parent="#blogcategories" data-target="#collapseTwo" data-toggle="collapse">
-                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-minus"></span> Women Wear </a> <span class="categorycount">10</span></h4>
+                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-minus"></span> Festivals </a> <span class="categorycount">10</span></h4>
                   </div>
                   <div class="panel-collapse collapse in" id="collapseTwo">
                       <div class="panel-body">
                           <ul>
-                              <li class="item"> <a href="#a">Jeans</a></li>
-                              <li class="item"> <a href="#a">Shirts</a></li>
-                              <li class="item"> <a href="#a">Shoes</a></li>
-                              <li class="item"> <a href="#a">Sports Wear</a></li>
+                              <li class="item"> <a href="#a">Diwali</a></li>
+                              <li class="item"> <a href="#a">Pongal</a></li>
+                              <li class="item"> <a href="#a">Dussehra</a></li>
+                              <li class="item"> <a href="#a">Ugadi</a></li>
+                              <li class="item"> <a href="#a">Eid</a></li>
+                              <li class="item"> <a href="#a">Good Friday</a></li>
                           </ul>
                       </div>
                   </div>
               </div>
               <div class="panel panel-default">
                   <div class="panel-heading closed" data-parent="#blogcategories" data-target="#collapseThree" data-toggle="collapse">
-                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-plus"></span> Fragrance </a> <span class="categorycount">23</span></h4>
+                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-plus"></span> Formals </a> <span class="categorycount">23</span></h4>
                   </div>
                   <div class="panel-collapse collapse" id="collapseThree">
                       <div class="panel-body">
                           <ul>
-                              <li class="item"> <a href="#a">Jeans</a></li>
-                              <li class="item"> <a href="#a">Shirts</a></li>
-                              <li class="item"> <a href="#a">Shoes</a></li>
-                              <li class="item"> <a href="#a">Sports Wear</a></li>
+                              <li class="item"> <a href="#a">Interviews</a></li>
+                              <li class="item"> <a href="#a">Office Wear</a></li>
+                              <li class="item"> <a href="#a">Presentations</a></li>
+                              <li class="item"> <a href="#a">Business Meetings</a></li>
+                              <li class="item"> <a href="#a">Graduation</a></li>
+                              <li class="item"><a href="#a">Reunion</a></li>
                           </ul>
                       </div>
                   </div>
               </div>
               <div class="panel panel-default">
                   <div class="panel-heading closed" data-parent="#blogcategories" data-target="#collapseFour" data-toggle="collapse">
-                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-plus"></span> Music </a><span class="categorycount">06</span> </h4>
+                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-plus"></span> Sports </a><span class="categorycount">06</span> </h4>
                   </div>
                   <div class="panel-collapse collapse" id="collapseFour">
                       <div class="panel-body">
                           <ul>
-                              <li class="item"> <a href="#a">Jeans</a></li>
-                              <li class="item"> <a href="#a">Shirts</a></li>
-                              <li class="item"> <a href="#a">Shoes</a></li>
-                              <li class="item"> <a href="#a">Sports Wear</a></li>
+                              <li class="item"> <a href="#a">Football</a></li>
+                              <li class="item"> <a href="#a">Cricket</a></li>
+                              <li class="item"> <a href="#a">Basket Ball</a></li>
+                              <li class="item"> <a href="#a">Badminton</a></li>
+                              <li class="item"> <a href="#a">Tennis</a></li>
                           </ul>
                       </div>
                   </div>
               </div>
               <div class="panel panel-default">
                   <div class="panel-heading closed" data-parent="#blogcategories" data-target="#collapseFive" data-toggle="collapse">
-                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-plus"></span> Games </a><span class="categorycount">80</span> </h4>
+                      <h4 class="panel-title"> <a href="#a"> <span class="fa fa-plus"></span> Casuals </a><span class="categorycount">80</span> </h4>
                   </div>
                   <div class="panel-collapse collapse" id="collapseFive">
                       <div class="panel-body">
                           <ul>
-                              <li class="item"> <a href="#a">Jeans</a></li>
-                              <li class="item"> <a href="#a">Shirts</a></li>
-                              <li class="item"> <a href="#a">Shoes</a></li>
-                              <li class="item"> <a href="#a">Sports Wear</a></li>
+                              <li class="item"> <a href="#a">Summer</a></li>
+                              <li class="item"> <a href="#a">Winter</a></li>
+                              <li class="item"> <a href="#a">Rainy</a></li>
+                              <li class="item"> <a href="#a">Nightware</a></li>
                           </ul>
                       </div>
                   </div>
@@ -927,16 +992,16 @@
       </div>
       <!-- end: Blog Categories -->
 
-      <div class="clearfix f-space30"></div>
-      <div class="box-heading"><span>Compare</span></div>
+<!--      <div class="clearfix f-space30"></div>-->
+<!--      <div class="box-heading"><span>Compare</span></div>-->
       <!-- Compare -->
-      <div class="box-content">
-          <div class="compare"> <span><a href="product.php">Ladies Stylish Handbag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span> <span><a href="product.php">Female Strips Handbag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span> <span><a href="product.php">Blue Fashion Bag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span>
-              <button class="btn color1 normal pull-right" type="submit">Compare</button>
-          </div>
-
+<!--      <div class="box-content">-->
+<!--          <div class="compare"> <span><a href="product.php">Ladies Stylish Handbag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span> <span><a href="product.php">Female Strips Handbag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span> <span><a href="product.php">Blue Fashion Bag</a> <a href="#" class="pull-right"><i class="fa fa-times fa-fw"></i></a> </span>-->
+<!--              <button class="btn color1 normal pull-right" type="submit">Compare</button>-->
+<!--          </div>    -->
+<!---->
           <!-- Compare -->
-      </div>
+<!--      </div>-->
       <div class="clearfix f-space30"></div>
       <!-- Get Updates Box -->
       <div class="box-content">

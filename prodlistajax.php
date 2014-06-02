@@ -6,15 +6,37 @@
  * Time: 3:17 PM
  */
 require('includes/configure.php');
+$qno = intval($_GET['qno']);
+if($qno == 1)
+{
+    $sortby = intval($_GET['sortby']);
+    $subocc_id = intval($_GET['subocc_id']);
+    $occ = $_GET['occ'];
+    $limitpage = intval($_GET['limit']);
+    $start_img = intval($_GET['startnum']);
+    $minprice = floatval($_GET['minprice']);
+    $maxprice = floatval($_GET['maxprice']);
 
-$subocc_id = intval($_GET['subocc_id']);
-$occ = $_GET['occ'];
-$limitpage = intval($_GET['limit']);
-$start_img = intval($_GET['startnum']);
 
 //echo "get lost ";
+switch($sortby) {
+    case 1 : //sort by price low to high
+        $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) AND price>=$minprice AND price<=$maxprice ORDER BY price ASC limit $start_img,$limitpage";
+        break;
+    case 2 : // sort by price high to low
+        $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) AND price>=$minprice AND price<=$maxprice  ORDER BY price DESC limit $start_img,$limitpage";
+        break;
+   /* case 3 :    //sort by rating highest
+        break;
+    case 4 :    //sort by rating lowest
+        break;
+    case 5 :    //sort by recent
+        break;  */
+    default :   // by default sort by price low to high
+        $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) AND price>=$minprice AND price<=$maxprice  ORDER BY price ASC limit $start_img,$limitpage";
+        break;
 
-    $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) limit $start_img,$limitpage";
+}
     //echo $query_str;
     $result = mysqli_query($con,$query_str);
     if(!$result){
@@ -50,7 +72,6 @@ $start_img = intval($_GET['startnum']);
               </div>
           </div>";
 
-
             if($count % 3 == 0)
             {
                 echo "</div>";
@@ -59,17 +80,26 @@ $start_img = intval($_GET['startnum']);
             $count = $count + 1;
 
         }
-        if($count % 3 != 0)
+        if($count != 1 and $count % 3 != 0)
         {
             echo "</div>";
-            //echo "<div class=\"clearfix f-space30\"></div>";
+
         }
-        if($count == 1)
-        {
+        $checkmore = 0;
+        if($count == 1){
             echo "No More Images";
+            $checkmore = 0;
         }
+        else
+        {
+            $checkmore = 1;
+               // $checkmore = 0;
+        }
+        //echo "<input type=\"hidden\" id=\"moreprods\" value=\"$checkmore\" >";
+
     }
 
+}
 
 
 ?>

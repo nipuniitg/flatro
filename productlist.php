@@ -471,16 +471,17 @@
 
   <?php
 
-  /*
-  $occ = $_POST['occ'];     //getting occasion
-  $occ_id = $_POST['occ_id'];   // getting occasion id
+  
+  $occ = $_POST['categoryType'];     //getting occasion
+  $occ_id = $_POST['category_id'];   // getting occasion id
   $subocc_id = $_POST['subocc_id']; // getting sub-occasion id
   $subocc = $_POST['subocc'];   // getting sub-occasion
-  */
-  $occ = 'Party';
+  
+
+  /*$occ = 'Party';
   $occ_id = 1;
   $subocc = 'Birthday';
-  $subocc_id = 1;
+  $subocc_id = 1;*/
   $limitpage = 9;
   $sortby = 1;
   $page_no = 1;

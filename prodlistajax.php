@@ -7,6 +7,7 @@
  */
 require('includes/configure.php');
 $qno = intval($_GET['qno']);
+
 if($qno == 1)
 {
     $sortby = intval($_GET['sortby']);
@@ -16,15 +17,36 @@ if($qno == 1)
     $start_img = intval($_GET['startnum']);
     $minprice = floatval($_GET['minprice']);
     $maxprice = floatval($_GET['maxprice']);
+    $brandstr = $_GET['brands'];
 
+//    if($brandstr != "") {
+//        $brand_arr = explode(",",$brandstr);
+//    for($i=0; $i<count($brand_arr);$i++)
+//    {
+//        echo $brand_arr[$i];
+//        echo " , ";
+//    }
+//        echo count($brand_arr);
+//
+//    }
+//    else {
+//        $brand_arr = array();
+//    }
+//
+//    $brandstr = join('","',$brand_arr);
 
 //echo "get lost ";
+ $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) AND price>=$minprice AND price<=$maxprice ";
+if($brandstr != "")
+{
+    $query_str = $query_str . " AND productBrand IN (\"$brandstr\") ";
+}
 switch($sortby) {
     case 1 : //sort by price low to high
-        $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) AND price>=$minprice AND price<=$maxprice ORDER BY price ASC limit $start_img,$limitpage";
+        $query_str = $query_str . " ORDER BY price ASC limit $start_img,$limitpage";
         break;
     case 2 : // sort by price high to low
-        $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) AND price>=$minprice AND price<=$maxprice  ORDER BY price DESC limit $start_img,$limitpage";
+        $query_str = $query_str . " ORDER BY price DESC limit $start_img,$limitpage";
         break;
    /* case 3 :    //sort by rating highest
         break;
@@ -33,7 +55,7 @@ switch($sortby) {
     case 5 :    //sort by recent
         break;  */
     default :   // by default sort by price low to high
-        $query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) AND price>=$minprice AND price<=$maxprice  ORDER BY price ASC limit $start_img,$limitpage";
+        $query_str = $query_str . " ORDER BY price ASC limit $start_img,$limitpage";
         break;
 
 }

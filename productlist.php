@@ -471,17 +471,19 @@
 
   <?php
 
-  
+ /*
   $occ = $_POST['categoryType'];     //getting occasion
   $occ_id = $_POST['category_id'];   // getting occasion id
   $subocc_id = $_POST['subocc_id']; // getting sub-occasion id
   $subocc = $_POST['subocc'];   // getting sub-occasion
-  
+  */
 
-  /*$occ = 'Party';
+  $occ = 'Party';
   $occ_id = 1;
   $subocc = 'Birthday';
-  $subocc_id = 1;*/
+  $subocc_id = 1;
+
+
   $limitpage = 9;
   $sortby = 1;
   $page_no = 1;
@@ -496,12 +498,37 @@
       var sortvalue = 1;
       var minprice = 0;
       var maxprice = 1000000;
+      var brandstr = "";
       var subocc_id = "<?php echo $subocc_id; ?>";
       var occ = "<?php echo $occ; ?>";
       function clearprice(){
           document.getElementById("minprice").value = "";
           document.getElementById("maxprice").value = "";
       }
+
+// code for auto-respond on clicking on brands
+/*
+      $(".chk").change(function() {
+          var chkArray = [];
+          */
+/* look for all checkboes that have a class 'chk' attached to it and check if it was checked *//*
+
+          $(".chk:checked").each(function() {
+              chkArray.push($(this).val());
+
+          });
+
+          */
+/* we join the array separated by the comma *//*
+
+          var selected;
+          selected = chkArray.join('","') + "";
+          alert(selected);
+
+      });
+*/
+
+
       function loadimages( sortby ){
 
             sortby = sortvalue;
@@ -548,7 +575,7 @@
           }
           //alert(pagenum);
           var qno = 1;
-          xmlhttp.open("GET","prodlistajax.php?qno="+qno+"&occ="+occ+"&subocc_id="+subocc_id+"&startnum="+start_image+"&limit="+count_images+"&sortby="+sortby+"&minprice="+minprice+"&maxprice="+maxprice,true);
+          xmlhttp.open("GET","prodlistajax.php?qno="+qno+"&occ="+occ+"&subocc_id="+subocc_id+"&startnum="+start_image+"&limit="+count_images+"&sortby="+sortby+"&minprice="+minprice+"&maxprice="+maxprice+"&brands="+brandstr,true);
           //alert("opened");
           xmlhttp.send();
 
@@ -556,6 +583,27 @@
       }
 
       function filterprods(){
+          /* declare an checkbox array */
+          var chkArray = [];
+
+          /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+          $(".chk:checked").each(function() {
+              chkArray.push($(this).val());
+              //$(this).click();
+          });
+
+          /* we join the array separated by the comma */
+          var selected;
+          selected = chkArray.join('","') + "";
+
+          /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+          /*if(selected.length > 1){
+               alert("You have selected " + selected);
+          }else{
+           alert("Please at least one of the checkbox");
+          }*/
+          brandstr = selected;
+
           if(document.getElementById("minprice").value != "")
           {
               minprice = document.getElementById("minprice").value;
@@ -598,13 +646,12 @@
           }
           //alert(pagenum);
           var qno = 1;
-          xmlhttp.open("GET","prodlistajax.php?qno="+qno+"&occ="+occ+"&subocc_id="+subocc_id+"&startnum="+cur_start_img+"&limit="+cur_count_images+"&sortby="+sortby+"&minprice="+minprice+"&maxprice="+maxprice,true);
+          xmlhttp.open("GET","prodlistajax.php?qno="+qno+"&occ="+occ+"&subocc_id="+subocc_id+"&startnum="+cur_start_img+"&limit="+cur_count_images+"&sortby="+sortby+"&minprice="+minprice+"&maxprice="+maxprice+"&brands="+brandstr,true);
           //alert("opened");
           xmlhttp.send();
 
 
       }
-
 
   </script>
 
@@ -842,6 +889,37 @@
           <div class="shopby">
               <span>Color</span>
               <div class="colors"> <a href="#a" data-toggle="tooltip" title="Orange (20)" class="color bg-orange"></a> <a href="#a" data-toggle="tooltip" title="Fuchsia (03)" class="color bg-fuchsia"></a> <a href="#a" data-toggle="tooltip" title="Blue (12)" class="color bg-blue"></a> <a href="#a" data-toggle="tooltip" title="Gray (20)" class="color bg-gray"></a> <a href="#a" data-toggle="tooltip" title="Coral (10)" class="color bg-coral"></a> <a href="#a" data-toggle="tooltip" title="Khaki (33)" class="color bg-khaki"></a> <a href="#a" data-toggle="tooltip" title="Green (20)" class="color bg-green"></a> <a href="#a" data-toggle="tooltip" title="Purple (20)" class="color bg-purple"></a> <a href="#a" data-toggle="tooltip" title="Salmon (44)" class="color bg-salmon"></a> <a href="#a" data-toggle="tooltip" title="Cyan (21)" class="color bg-cyan"></a> <a href="#a" data-toggle="tooltip" title="Gold (11)" class="color bg-gold"></a> <a href="#a" data-toggle="tooltip" title="Teal (30)" class="color bg-teal"></a> <a href="#a" data-toggle="tooltip" title="White (33)" class="color bg-white"></a> <a href="#a" data-toggle="tooltip" title="Black (18)" class="color bg-black"></a> </div>
+
+              <div class="clearfix f-space10"></div>
+              <hr>
+              <!-- Brand filter -->
+              <span> Brands</span>
+              <div class="panel panel-default" style="max-height:150px; overflow-y:scroll" id="brand">
+                  <ul>
+                      <?php
+                      $brand_q = "SELECT productBrand, count(*) as count FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) group by productBrand";
+                      //$query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) limit $limitpage";
+                      //echo $query_str;
+                      $result = mysqli_query($con,$brand_q);
+                      if(!$result){
+                          echo 'Error	3';
+                      }
+                      else{
+                          while($row = $result->fetch_object())
+                          {
+                              echo "<div class=\"checkbox\"> <label> <input type=\"checkbox\" value=\"$row->productBrand\" class=\"chk\" name=\"$row->productBrand\"> $row->productBrand ($row->count)</label> </div>";
+
+                          }
+                      }
+
+                      ?>
+                      <!--
+                      <div class="checkbox"> <label> <input type="checkbox" value="tommy" class="chk" name="tommy"> Tommy </label> </div>
+                      <div class="checkbox"> <label> <input type="checkbox" value="tommy" class="chk" name="tommy"> Tommy Hilfigher</label> </div>
+                        -->
+                  </ul>
+              </div>
+
               <hr>
 
               <!-- Price Range -->
@@ -869,35 +947,7 @@
 
               </div>
               <!--end: Price Range -->
-              <div class="clearfix f-space10"></div>
-              <hr>
-              <!-- Brand filter -->
-              <span> Brands</span>
-              <div class="panel panel-default" id="brand">
-                  <ul>
-                      <?php
-                      $brand_q = "SELECT productBrand, count(*) as count FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) group by productBrand";
-                       //$query_str = "SELECT * FROM tagdata_shristi where id IN (SELECT DISTINCT id FROM {$occ} WHERE sub_occasion=$subocc_id) limit $limitpage";
-                        //echo $query_str;
-                      $result = mysqli_query($con,$brand_q);
-                      if(!$result){
-                           echo 'Error	3';
-                      }
-                      else{
-                          while($row = $result->fetch_object())
-                          {
-                              echo "<div class=\"checkbox\"> <label> <input type=\"checkbox\" value=\"$row->productBrand\" class=\"chk\" name=\"$row->productBrand\"> $row->productBrand ($row->count)</label> </div>";
 
-                          }
-                      }
-
-                      ?>
-                      <!--
-                      <div class="checkbox"> <label> <input type="checkbox" value="tommy" class="chk" name="tommy"> Tommy </label> </div>
-                      <div class="checkbox"> <label> <input type="checkbox" value="tommy" class="chk" name="tommy"> Tommy Hilfigher</label> </div>
-                        -->
-                  </ul>
-              </div>
           </div>
       </div>
       <!-- end: Filter by -->

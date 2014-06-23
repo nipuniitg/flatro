@@ -260,60 +260,32 @@ require('includes/configure.php');
 <!-- Menu Item -->
 <li class="hidden-xs"> <a  href="#" onclick="document.myform.formVar.value='2'; document.myform.categoryType.value='Festivals';; document.myform.submit(); return false"> <i class="fa fa-star"></i> <span>Festivals</span> <i class="fa fa-angle-right"></i> </a>
 <!--<li> <a href="categorylist.php"> <i class="fa fa-star"></i> <span>Festivals</span> <i class="fa fa-angle-right"></i> </a>-->
-    <div class="dropdown-menu">
+    <div class="dropdown-menu flyout-menu">
         <!-- Sub Menu -->
-        <div class="content">
-            <div class="row">
-                <div class="col-md-4"> <a class="menu-title" href="#a">Hindu</a>
-                    <ul>
-                        <li><a href="productlist.php">Diwali</a></li>
-                        <li><a href="productlist.php">Pongal</a></li>
-                        <li><a href="productlist.php">Dussehra</a></li>
-                        <li><a href="productlist.php">Ugadi</a></li>
-                        <li><a href="productlist.php">Bihu</a></li>
-                        <li><a href="productlist.php">Holi</a></li>
+        <ul>
+			<?php 
+			$query_str = "SELECT subcategory,id FROM level1 where category='2'";
+			$result = mysqli_query($con,$query_str);
+			if(!$result){
+				echo 'Error	1';
+			}
+			else
+			{
+				while($row = $result->fetch_object())
+				{
+				 echo "<li>";
+				 echo "<a href=\"#\" onclick=\"document.prodform.category_id.value='2'; document.prodform.categoryType.value='Festivals';
+			document.prodform.subocc_id.value='$row->id';
+			document.prodform.subocc.value='$row->subcategory';; document.prodform.submit(); return false\">$row->subcategory</a> ";
+				 echo "</li>";
+				}
+			}
+			?>
 
-                    </ul>
-                </div>
-                <div class="col-md-4"> <a class="menu-title" href="#a">Muslim</a>
-                    <ul>
-                        <li><a href="productlist.php">Eid</a></li>
-                        <li><a href="productlist.php">Ramadan</a></li>
-                        <!--<li><a href="#a">Fashion Shirts</a></li>
-                        <li><a href="#a">Black Shirts</a></li>
-                        <li><a href="#a">White Shirts</a></li>
-                        <li><a href="#a">Gray Shirts</a></li>-->
-                    </ul>
-                </div>
-                <div class="col-md-4"> <a class="menu-title" href="#a">Christian</a>
-                    <ul>
-                        <li><a href="productlist.php">New Year</a></li>
-                        <li><a href="productlist.php">Christmas</a></li>
-                        <li><a href="productlist.php">Good Friday</a></li>
-                        <!--<li><a href="#a">Top Jeans</a></li>
-                        <li><a href="#a">New Jeans</a></li>
-                        <li><a href="#a">Color Jeans</a></li>-->
-                    </ul>
-                </div>
-                <div class="col-md-4"> <a class="menu-title" href="#a">Others</a>
-                    <ul>
-                        <li><a href="productlist.php">Karvachauth</a></li>
-                        <!--<li><a href="#a">Slim-fit Jeans</a></li>
-                        <li><a href="#a">Loose Jeans</a></li>
-                        <li><a href="#a">Top Jeans</a></li>
-                        <li><a href="#a">New Jeans</a></li>
-                        <li><a href="#a">Color Jeans</a></li>-->
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p> <a href="#a"><img alt="" src="images/menu-ad.jpg"></a> </p>
-                </div>
-            </div>
-        </div>
+        </ul>
         <!-- end: Sub Menu -->
     </div>
+	
 </li>
 <!-- end: Menu Item -->
 <!-- Menu Item -->
